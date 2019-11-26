@@ -88,7 +88,7 @@
 <meta property="og:description" content="在学习ctf web的途中burpsuite是一款需要掌握的工具，此篇记录我的学习经历 下载&amp;emsp;&amp;emsp;burpsuite可以在官网中下载，有专业版和社区版，专业版是需要付费的，社区版虽然不需要付费但是有一些功能是被禁用的，所以可以选择在网上下载破解版，这类资源还是挺多的，也有介绍如何使用破解版的相关流程，所以我选择了破解版。 &amp;emsp;&amp;emsp;需要注意的是，使用burpsuit">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2019&#x2F;11&#x2F;26&#x2F;burpsuite%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF&#x2F;1.png">
-<meta property="og:updated_time" content="2019-11-26T05:19:17.052Z">
+<meta property="og:updated_time" content="2019-11-26T05:22:46.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2019&#x2F;11&#x2F;26&#x2F;burpsuite%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF&#x2F;1.png">
 
@@ -360,11 +360,11 @@
 <p>&emsp;但不建议这么做，因为你如果没使用bp(burpsuite简称)，你则又需要将设置改为系统代理，否则无法进行正常的网页浏览，所以我选择使用firefox的插件FoxyProxy，在firefox中按下<code>Ctrl+Shift+A</code>然后搜索FoxyProxy添加插件就行了，然后进入插件的Options功能中点击ADD进行如下配置</p>
 <img src="/frosty.github.io/2019/11/26/burpsuite%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/1.png" class>
 
-<p>&emsp;&emsp;接下来进行证书的配置，<strong>在打开代理功能的时候</strong>(一定要打开，否则无法进入),输入网址<a href="http://burp进行访问，点击右上角的证书下载，然后进入firfox的设置-选项-隐私与安全-证书-查看证书-导入刚才下载的证书就行了;剩下的就是在你需要的时候打开就行了。" target="_blank" rel="noopener">http://burp进行访问，点击右上角的证书下载，然后进入firfox的设置-选项-隐私与安全-证书-查看证书-导入刚才下载的证书就行了;剩下的就是在你需要的时候打开就行了。</a></p>
-<h3 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h3><p>&emsp;与之前firefox一样，选择下载插件，这里就直接附上教程的<a href="https://www.anquanke.com/post/id/85925" target="_blank" rel="noopener">传送门</a>。与firefox只有一些小差别。</p>
+<p>&emsp;&emsp;接下来进行证书的配置，<strong>在打开代理功能的时候</strong>(一定要打开，否则无法进入),输入网址<a href="http://burp" target="_blank" rel="noopener">http://burp</a> 进行访问，点击右上角的证书下载，然后进入firfox的设置-选项-隐私与安全-证书-查看证书-导入刚才下载的证书就行了;剩下的就是在你需要的时候打开就行了。</p>
+<h3 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h3><p>&emsp;与之前firefox一样，选择下载插件，这里就直接附上教程的<strong><a href="https://www.anquanke.com/post/id/85925" target="_blank" rel="noopener">传送门</a></strong>。与firefox只有一些小差别。</p>
 <h2 id="burpsuite的使用-遇到的一些问题"><a href="#burpsuite的使用-遇到的一些问题" class="headerlink" title="burpsuite的使用(遇到的一些问题)"></a>burpsuite的使用(遇到的一些问题)</h2><p>&emsp;&emsp;因为英语不够好，所以看官方文档比较吃力，中文教程又不够详细，所以学习使用真是一条漫长的道路，我选择一边谷歌搜索一边看b站上的教程，同时记录一下自己遇到的问题</p>
 <h3 id="无法拦截到response"><a href="#无法拦截到response" class="headerlink" title="无法拦截到response"></a>无法拦截到response</h3><p>&emsp;&emsp;在按照网上的教程，设置了拦截response的选项后点击刷新页面发现已然无法拦截response，这个问题我搜了很久，但是网上没有相对应问题解答，然后非常吃力的看了下官方文档也没发现这类问题的介绍，所以我就自己尝试，在尝试的过程中发现了一个神奇的现象，就是在拦截request后将host乱改一下比如在后面乱加一些子文件，在网页报错后，从新刷新然后就能拦截到response，显示HTML码，这个问题困扰了很久，我就尝试了很多次，也不知道为什么会这样，尝试了很久以后，我怀疑是burpsuite破解版的问题，又在网上下了其他版本的破解版，甚至是官方的社区版，依然如此。一段时候后我怀疑是浏览器的问题，于是我用上了chrome(前面的尝试都是用的firefox)，在进入我测试的那个网站后我欣喜的发现能拦截到response了，就在我断定是浏览器的问题时候我点击了刷新，发现又不能拦截了。但这同时也给了一个思考，为什么我在进这个网站的时候能拦截到，然后刷新的时候就不行了呢，我就想到了一个问题-缓存！对，就是缓存，于是乎我在浏览器中清除了缓存，点击刷新，binggo能拦截到response了，而且两个浏览器都可以，果然是缓存搞的怪，就这样艰难的解决了这个问题。</p>
-<p>&emsp;&emsp;总结一下:<strong>无法拦截到response可能是你在浏览这个网页时缓存了，所以你在刷新后，直接调用缓存而不需要服务器再次向你发送报文 **(应该是这样的，目前http了解的内容较少，可能理解有误) ，</strong>所以你只需要删除一下缓存**就行，火狐直接在历史里面就行，而且只需要勾选缓存就行了;chrome则按下<code>Ctrl+Shift+Delete</code>然后勾选其中的清楚缓存的图片和文件(其中的看个人意愿是否勾选全部，但如果需要刷新拦截response则需要勾选上诉提到的选项)。</p>
+<p>&emsp;&emsp;总结一下:<strong>无法拦截到response可能是你在浏览这个网页时缓存了，所以你在刷新后，直接调用缓存而不需要服务器再次向你发送报文</strong> (应该是这样的，目前http了解的内容较少，可能理解有误) ，<strong>所以你只需要删除一下缓存就行</strong>，火狐直接在历史里面就行，而且只需要勾选缓存就行了;chrome则按下<code>Ctrl+Shift+Delete</code>然后勾选其中的清楚缓存的图片和文件(其中的看个人意愿是否勾选全部，但如果需要刷新拦截response则需要勾选上诉提到的选项)。</p>
 
       
     </div>
@@ -404,6 +404,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/frosty.github.io/2019/11/26/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" rel="prev" title="python学习之路">
+                python学习之路 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -480,7 +484,7 @@
               
                 <a href="/frosty.github.io/archives">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -491,7 +495,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/frosty.github.io/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -502,7 +506,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/frosty.github.io/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
