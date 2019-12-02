@@ -258,6 +258,184 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty.github.io/frosty.github.io/2019/12/02/git%E7%9A%84%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="frosty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/frosty.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="frosty的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/frosty.github.io/2019/12/02/git%E7%9A%84%E5%AD%A6%E4%B9%A0/" itemprop="url">git的学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-02T22:37:10+08:00">
+                2019-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/frosty.github.io/categories/git-github/" itemprop="url" rel="index">
+                    <span itemprop="name">git/github</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&emsp;&emsp;最近在学习git的使用这里简单的记录一下。附上学习<a href="https://www.liaoxuefeng.com/wiki/896043488029600/897889638509536" target="_blank" rel="noopener">网址</a></p>
+<h1 id="操作本地指令"><a href="#操作本地指令" class="headerlink" title="操作本地指令"></a>操作本地指令</h1><ol>
+<li><p>vi 文件名，可以进入到编写模式，若该文件不存在则自动创建</p>
+<p>PS:&emsp;vi进入后需要按下 <strong>i</strong> 进入到插入模式,退出时按下ESC再输入<strong>:wq</strong>就能够退出</p>
+</li>
+<li><p>git add filename，可以将文件上传到缓存区(stage)</p>
+</li>
+<li><p>git commit -m “(注释)”，可以将缓存区(全部)上传到分支</p>
+</li>
+<li><p>git status， 告诉当前状态</p>
+</li>
+<li><p>git diff filename，可以看到工作区和缓存区的区别</p>
+<p>git diff HEAD  – filename,可以看到工作区和版本库的区别</p>
+</li>
+<li><p>git log ，查看历史记录</p>
+<p>git log –pretty=oneline，可以减少输出 </p>
+</li>
+<li><p>git reset –hard HEAD 可以返回上一版本</p>
+</li>
+<li><p>git reset –hard commitid ,可以返回到指定版本</p>
+</li>
+<li><p>git reflog 可以记录每次操作，便于查找commitid</p>
+</li>
+<li><p>git checkout –file 可以撤销工作区中的修改(一次，没有使用git add)</p>
+<p>(git status 的提示中git restore &lt;file&gt;也可以用，不知区别是什么，谷歌也没找到)</p>
+</li>
+<li><p>git reset HEAD &lt;file&gt; 可以把缓存区的撤销修改掉，返回工作区</p>
+<p>(git status提示中也可以用git restore –staged&lt;file&gt;但我目前并没有搞清楚两则的区别，还是两者都是一样的？)</p>
+</li>
+<li><p>rm file 删除工作区中的文件</p>
+<p>git rm file 向缓存区提交操作命令</p>
+<p>最后再使用git commit -m “”即可</p>
+<p>git checkout –file 可以撤销删除工作区中文件的指令(实质是把版本库中的东西搬回来，因为你的版本库还并没改动，注意这个时候还没有git rm ,gir commit)</p>
+</li>
+<li></li>
+</ol>
+<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><p>（暂时写到这，后期再写）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty.github.io/frosty.github.io/2019/11/26/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -776,7 +954,7 @@
               
                 <a href="/frosty.github.io/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -787,7 +965,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/frosty.github.io/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
