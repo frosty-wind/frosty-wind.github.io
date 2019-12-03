@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="frosty的博客">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;最近在学习git的使用这里简单的记录一下。附上学习网址 操作本地指令 vi 文件名，可以进入到编写模式，若该文件不存在则自动创建 PS:&amp;emsp;vi进入后需要按下 i 进入到插入模式,退出时按下ESC再输入:wq就能够退出  git add filename，可以将文件上传到缓存区(stage)  git commit -m “(注释)”，可以将缓存区(全部)上传到分支">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-03T13:16:49.765Z">
+<meta property="og:updated_time" content="2019-12-03T15:06:17.148Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -404,6 +404,24 @@
 </ol>
 <p>(git clone 后还可以跟其他的，它满足多种协议，若想了解，可以上网搜一搜)</p>
 <p>PS : git clone一般比较慢，是因为github.global.ssl.fastly.net该域名被限制，我现在还没找到好的教程，主要是对于各种协议，端口理解不够(计网这本书真该好好多刷几遍了)</p>
+<p>后来问了下学长，发现设置一下代理，再挂个梯子就行了，不过一定记得github前的https改为http，至于原因，暂时学艺不精不清楚，学长是这么说的，这件事整了好几个小时，得好好整一些代理和计网了</p>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><ol>
+<li><p>git checkout -b dev , 创建dev分支然后切换到dev分支，-b参数表示创建然后再切换</p>
+<p>这条命令相当于包含了两条命令</p>
+<p>git branch dev ,创建</p>
+<p>git checkout dev，切换</p>
+</li>
+</ol>
+<p>   git switch (分支),切换分支，相对于checkout更好理解</p>
+<p>   git switch -c (分支)，创建并切换分支</p>
+<ol start="2">
+<li><p>git branch ,查看当前分支</p>
+</li>
+<li><p>git merge (分支),将指定分支的结果合并到master上</p>
+</li>
+<li><p>git branch -d (分支),将指定分支删除</p>
+</li>
+</ol>
 
       
     </div>
@@ -574,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作本地指令"><span class="nav-number">1.</span> <span class="nav-text">操作本地指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程仓库"><span class="nav-number">2.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接本地库"><span class="nav-number">2.1.</span> <span class="nav-text">链接本地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从远程库克隆"><span class="nav-number">2.2.</span> <span class="nav-text">从远程库克隆</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作本地指令"><span class="nav-number">1.</span> <span class="nav-text">操作本地指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程仓库"><span class="nav-number">2.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接本地库"><span class="nav-number">2.1.</span> <span class="nav-text">链接本地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从远程库克隆"><span class="nav-number">2.2.</span> <span class="nav-text">从远程库克隆</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-number">3.</span> <span class="nav-text">分支</span></a></li></ol></div>
             
 
           </div>
