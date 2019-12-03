@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="frosty的博客">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;最近在学习git的使用这里简单的记录一下。附上学习网址 操作本地指令 vi 文件名，可以进入到编写模式，若该文件不存在则自动创建 PS:&amp;emsp;vi进入后需要按下 i 进入到插入模式,退出时按下ESC再输入:wq就能够退出  git add filename，可以将文件上传到缓存区(stage)  git commit -m “(注释)”，可以将缓存区(全部)上传到分支">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-03T05:37:24.935Z">
+<meta property="og:updated_time" content="2019-12-03T13:16:49.765Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -386,9 +386,24 @@
 </li>
 <li></li>
 </ol>
-<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><ol>
-<li>$ git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:yourusername/yourdirname.git ，将你的仓库与github关联</li>
+<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><h2 id="链接本地库"><a href="#链接本地库" class="headerlink" title="链接本地库"></a>链接本地库</h2><ol>
+<li><p>$ git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:yourusername/yourdirname.git (根据自己的命名来写)，将你的仓库与github关联</p>
+</li>
+<li><p>$ git push -u origin master ，将本地库推送到远程库，因为是第一次使用所以需要加一个-u，后面则不需要。</p>
+<p>PS:这里我在使用这个命令的时候踩了一个坑，输入该命令后报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ERROR: Repository not found.</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure>
+<pre><code>
+在网上查了很久终于找到了解决方法，附上[网址](https://blog.csdn.net/weixin_40886892/article/details/80725071).
+
+我总结一下，将仓库中的.git目录打开(因为是隐藏没文件夹，没有该目录，需要设置，自己上网搜一下就有了)，打开config文件,将url后面的改为https模式形式，具体网址为GitHub上项目的网址，项目中有可以 直接复制网址的按钮，直接使用即可没然后就能git push了</code></pre></li>
+<li><p>此后上传文件使用 $git push origin master 即可</p>
+</li>
 </ol>
+<h2 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h2><ol>
+<li>git clone (网址)，从库那复制即可</li>
+</ol>
+<p>(git clone 后还可以跟其他的，它满足多种协议，若想了解，可以上网搜一搜)</p>
+<p>PS : git clone一般比较慢，是因为github.global.ssl.fastly.net该域名被限制，我现在还没找到好的教程，主要是对于各种协议，端口理解不够(计网这本书真该好好多刷几遍了)</p>
 
       
     </div>
@@ -559,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作本地指令"><span class="nav-number">1.</span> <span class="nav-text">操作本地指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程仓库"><span class="nav-number">2.</span> <span class="nav-text">远程仓库</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作本地指令"><span class="nav-number">1.</span> <span class="nav-text">操作本地指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程仓库"><span class="nav-number">2.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接本地库"><span class="nav-number">2.1.</span> <span class="nav-text">链接本地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从远程库克隆"><span class="nav-number">2.2.</span> <span class="nav-text">从远程库克隆</span></a></li></ol></li></ol></div>
             
 
           </div>
