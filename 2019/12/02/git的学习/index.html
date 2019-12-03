@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="frosty的博客">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;最近在学习git的使用这里简单的记录一下。附上学习网址 操作本地指令 vi 文件名，可以进入到编写模式，若该文件不存在则自动创建 PS:&amp;emsp;vi进入后需要按下 i 进入到插入模式,退出时按下ESC再输入:wq就能够退出  git add filename，可以将文件上传到缓存区(stage)  git commit -m “(注释)”，可以将缓存区(全部)上传到分支">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-02T15:29:18.019Z">
+<meta property="og:updated_time" content="2019-12-03T04:37:33.030Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -362,27 +362,27 @@
 <li><p>git status， 告诉当前状态</p>
 </li>
 <li><p>git diff filename，可以看到工作区和缓存区的区别</p>
-<p>git diff HEAD  – filename,可以看到工作区和版本库的区别</p>
+<p>git diff HEAD  - - filename,可以看到工作区和版本库的区别</p>
 </li>
 <li><p>git log ，查看历史记录</p>
-<p>git log –pretty=oneline，可以减少输出 </p>
+<p>git log - -pretty=oneline，可以减少输出 </p>
 </li>
-<li><p>git reset –hard HEAD 可以返回上一版本</p>
+<li><p>git reset - -hard HEAD 可以返回上一版本</p>
 </li>
-<li><p>git reset –hard commitid ,可以返回到指定版本</p>
+<li><p>git reset - -hard commitid ,可以返回到指定版本</p>
 </li>
 <li><p>git reflog 可以记录每次操作，便于查找commitid</p>
 </li>
-<li><p>git checkout –file 可以撤销工作区中的修改(一次，没有使用git add)</p>
+<li><p>git checkout - -file 可以撤销工作区中的修改(一次，没有使用git add)</p>
 <p>(git status 的提示中git restore &lt;file&gt;也可以用，不知区别是什么，谷歌也没找到)</p>
 </li>
 <li><p>git reset HEAD &lt;file&gt; 可以把缓存区的撤销修改掉，返回工作区</p>
-<p>(git status提示中也可以用git restore –staged&lt;file&gt;但我目前并没有搞清楚两则的区别，还是两者都是一样的？)</p>
+<p>(git status提示中也可以用git restore - -staged&lt;file&gt;但我目前并没有搞清楚两则的区别，还是两者都是一样的？)</p>
 </li>
 <li><p>rm file 删除工作区中的文件</p>
 <p>git rm file 向缓存区提交操作命令</p>
 <p>最后再使用git commit -m “”即可</p>
-<p>git checkout –file 可以撤销删除工作区中文件的指令(实质是把版本库中的东西搬回来，因为你的版本库还并没改动，注意这个时候还没有git rm ,gir commit)</p>
+<p>git checkout - -file 可以撤销删除工作区中文件的指令(实质是把版本库中的东西搬回来，因为你的版本库还并没改动，注意这个时候还没有git rm ,gir commit)</p>
 </li>
 <li></li>
 </ol>

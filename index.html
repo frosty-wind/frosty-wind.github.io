@@ -363,27 +363,27 @@
 <li><p>git status， 告诉当前状态</p>
 </li>
 <li><p>git diff filename，可以看到工作区和缓存区的区别</p>
-<p>git diff HEAD  – filename,可以看到工作区和版本库的区别</p>
+<p>git diff HEAD  - - filename,可以看到工作区和版本库的区别</p>
 </li>
 <li><p>git log ，查看历史记录</p>
-<p>git log –pretty=oneline，可以减少输出 </p>
+<p>git log - -pretty=oneline，可以减少输出 </p>
 </li>
-<li><p>git reset –hard HEAD 可以返回上一版本</p>
+<li><p>git reset - -hard HEAD 可以返回上一版本</p>
 </li>
-<li><p>git reset –hard commitid ,可以返回到指定版本</p>
+<li><p>git reset - -hard commitid ,可以返回到指定版本</p>
 </li>
 <li><p>git reflog 可以记录每次操作，便于查找commitid</p>
 </li>
-<li><p>git checkout –file 可以撤销工作区中的修改(一次，没有使用git add)</p>
+<li><p>git checkout - -file 可以撤销工作区中的修改(一次，没有使用git add)</p>
 <p>(git status 的提示中git restore &lt;file&gt;也可以用，不知区别是什么，谷歌也没找到)</p>
 </li>
 <li><p>git reset HEAD &lt;file&gt; 可以把缓存区的撤销修改掉，返回工作区</p>
-<p>(git status提示中也可以用git restore –staged&lt;file&gt;但我目前并没有搞清楚两则的区别，还是两者都是一样的？)</p>
+<p>(git status提示中也可以用git restore - -staged&lt;file&gt;但我目前并没有搞清楚两则的区别，还是两者都是一样的？)</p>
 </li>
 <li><p>rm file 删除工作区中的文件</p>
 <p>git rm file 向缓存区提交操作命令</p>
 <p>最后再使用git commit -m “”即可</p>
-<p>git checkout –file 可以撤销删除工作区中文件的指令(实质是把版本库中的东西搬回来，因为你的版本库还并没改动，注意这个时候还没有git rm ,gir commit)</p>
+<p>git checkout - -file 可以撤销删除工作区中文件的指令(实质是把版本库中的东西搬回来，因为你的版本库还并没改动，注意这个时候还没有git rm ,gir commit)</p>
 </li>
 <li></li>
 </ol>
