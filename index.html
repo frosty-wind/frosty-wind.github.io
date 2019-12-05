@@ -365,7 +365,7 @@
 <li><p>git diff filename，可以看到工作区和缓存区的区别</p>
 <p>git diff HEAD  - - filename,可以看到工作区和版本库的区别</p>
 </li>
-<li><p>git log ，查看历史记录</p>
+<li><p>git log ，查看历史记录,(输入q退出)</p>
 <p>git log - -pretty=oneline，可以减少输出 </p>
 </li>
 <li><p>git reset - -hard HEAD 可以返回上一版本</p>
@@ -385,7 +385,8 @@
 <p>最后再使用git commit -m “”即可</p>
 <p>git checkout - -file 可以撤销删除工作区中文件的指令(实质是把版本库中的东西搬回来，因为你的版本库还并没改动，注意这个时候还没有git rm ,gir commit)</p>
 </li>
-<li></li>
+<li><p>cat (file)，查看文件内容</p>
+</li>
 </ol>
 <h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><h2 id="链接本地库"><a href="#链接本地库" class="headerlink" title="链接本地库"></a>链接本地库</h2><ol>
 <li><p>$ git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:yourusername/yourdirname.git (根据自己的命名来写)，将你的仓库与github关联</p>
@@ -417,8 +418,25 @@
 <li><p>git branch ,查看当前分支</p>
 </li>
 <li><p>git merge (分支),将指定分支的结果合并到master上</p>
+<p>git merge –no-ff -m “(tag)” (分支),禁用FASTWARD模式，使之能够查看分支历史，（注意ff前只有一个 <em>-</em>。）</p>
 </li>
 <li><p>git branch -d (分支),将指定分支删除</p>
+</li>
+<li><p>git log –graph,查看分支合并情况</p>
+</li>
+<li><p>git stash,储藏现场(已经使用过了git add才能用)，注意时分支</p>
+</li>
+<li><p>git stash apply,恢复</p>
+</li>
+<li><p>git stash drop,删除</p>
+</li>
+<li><p>git stash pop,恢复并删除</p>
+<p>ps:这里谈一下为什么要先用stash隐藏，首先如果你在add后，没有用stash，返回原分支，会发现你在分支中增加的文件(或者做的改动)在原分支也有，并且在原分支做改动的时候会发现分支中的文件也发生改动，这里可以理解为你在commit前你的各个分支都是一样的，做改动的时候也会在其他分支中改动，你又不想用commit 污染commit的记录,所以这里需要stash一下。</p>
+</li>
+<li><p>多次stash可以用$ git stash apply stash@{0}，恢复指定的stash</p>
+</li>
+<li><p>git cheery-pick (commitid)</p>
+<p>当你在分支工作的时候，需要在主分支修改一个bug,在stash分支，并在主分支改动后，你需要将改bug的改动回到分支上，否则在后面合并的时候会报错，这个指令可以将改错弄到分支上</p>
 </li>
 </ol>
 
