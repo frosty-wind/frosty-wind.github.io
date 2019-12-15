@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="frosty的博客">
 <meta property="og:description" content="简单记录学习过程中需要记忆的东西 Apache  ·更改访问时默认的目录，在conf文件夹中找到文件httpd.conf用文本模式打开后查找documentRoot修改即可  SeverName可以修改别名，便于访问到此网址    对Apache修改后需要重启Apache才能生效  通过bin目录下的httped可以在cmd中检查apache是否正常，命令是在当前目录下输入httpde -t 显示">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-11T13:47:44.709Z">
+<meta property="og:updated_time" content="2019-12-15T13:01:28.330Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -374,6 +374,8 @@
 </li>
 <li><p>通过bin目录下的httped可以在cmd中检查apache是否正常，命令是在当前目录下输入httpde -t 显示ok即配置无误</p>
 <p>PS:这里我有个东西暂时没弄清楚，如果你在公网上有ip与域名，那么域名可以直接连接你的电脑，再经过80端口自然而然连接到你的apache的根目录，那么配置文件中的SeverName的用处到底是什么，或者说我前面的理解有误，只有当你的域名和你的Severname一样的时候才能连接到你的apache的根目录下，或者说通关你的ip并监听端口连接到你apache下需要通过Severname重定向连接到你本地ip，然后访问，问题先放在这儿，后面再学习一下计网再理解下</p>
+<hr>
+<p>&emsp;&emsp;这里有个理解不知道对不对，因为有时候一个ip可以对应多个网址，那么severname得作用是当用访问指向该服务器时，因为有多个虚拟主机但ip只有一个，那么再根据域名与severname匹配来 找到对应的文件夹进行匹配</p>
 </li>
 </ol>
 
