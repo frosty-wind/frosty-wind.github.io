@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="frosty的博客">
 <meta property="og:description" content="简单记录学习过程中需要记忆的东西 Apache  ·更改访问时默认的目录，在conf文件夹中找到文件httpd.conf用文本模式打开后查找documentRoot修改即可  SeverName可以修改别名，便于访问到此网址    对Apache修改后需要重启Apache才能生效  通过bin目录下的httped可以在cmd中检查apache是否正常，命令是在当前目录下输入httpde -t 显示">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-15T13:01:28.330Z">
+<meta property="og:updated_time" content="2019-12-15T14:49:11.136Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -377,6 +377,25 @@
 <hr>
 <p>&emsp;&emsp;这里有个理解不知道对不对，因为有时候一个ip可以对应多个网址，那么severname得作用是当用访问指向该服务器时，因为有多个虚拟主机但ip只有一个，那么再根据域名与severname匹配来 找到对应的文件夹进行匹配</p>
 </li>
+<li><p>这里踩了坑，php的apache扩展包无法加载到apache中，因为我在下php没下x86版本，然后一直一位是apache的问题</p>
+</li>
+</ol>
+<h1 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h1><h2 id="PHP基本语法"><a href="#PHP基本语法" class="headerlink" title="PHP基本语法"></a>PHP基本语法</h2><h3 id="PHP注释"><a href="#PHP注释" class="headerlink" title="PHP注释"></a>PHP注释</h3><ol>
+<li><p>行注释:一次注释一行</p>
+<ul>
+<li>// </li>
+<li>#</li>
+</ul>
+</li>
+<li><p>块注释:一次注释一块(多行)</p>
+<p>/*</p>
+<p>*/</p>
+</li>
+</ol>
+<h3 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h3><ol>
+<li>echo 输出</li>
+<li>$定义变量</li>
+<li>unset($变量名): 删除变量</li>
 </ol>
 
       
@@ -510,7 +529,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/frosty.github.io/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -521,7 +540,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/frosty.github.io/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -554,7 +573,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache"><span class="nav-number">1.</span> <span class="nav-text">Apache</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache"><span class="nav-number">1.</span> <span class="nav-text">Apache</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP"><span class="nav-number">2.</span> <span class="nav-text">PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP基本语法"><span class="nav-number">2.1.</span> <span class="nav-text">PHP基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP注释"><span class="nav-number">2.1.1.</span> <span class="nav-text">PHP注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语句"><span class="nav-number">2.1.2.</span> <span class="nav-text">基本语句</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
