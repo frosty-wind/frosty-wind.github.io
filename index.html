@@ -521,6 +521,7 @@
         
           
             <p>简单记录学习过程中需要记忆的东西</p>
+<p>推荐一下<strong><u><a href="https://www.bilibili.com/video/av12863134?p=22" target="_blank" rel="noopener">学习网站</a></u></strong>，讲的非常非常非常详细</p>
 <h1 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h1><ol>
 <li><ul>
 <li><p>·更改访问时默认的目录，在<strong>conf</strong>文件夹中找到文件<strong>httpd.conf</strong>用文本模式打开后查找documentRoot修改即可</p>
@@ -551,10 +552,77 @@
 <p>*/</p>
 </li>
 </ol>
-<h3 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h3><ol>
-<li>echo 输出</li>
-<li>$定义变量</li>
+<h3 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h3><ol>
+<li><p>echo 输出</p>
+</li>
+<li><p>$定义变量</p>
+</li>
+<li><p>可变变量：例如$a = b;$b = 2➡$$a=2;</p>
+</li>
+<li><p>常量定义 </p>
+<ul>
+<li>使用define(<strong>‘</strong>常量名<strong>‘</strong>，常量值)</li>
+<li>使用const 常量名 = 值</li>
+</ul>
+<p>PS : 常量通常以大写字母命名，这是为了更好的与变量区别。</p>
+<p>&emsp;&emsp;denfine可以定义一些特殊常量，例如define(‘-_-‘,’smile’)，但是不能用const定义（但对于这种特殊常量的访问需要使用constant，例如echo constant(‘-_-‘）</p>
+<p>define与const还有访问全权限上的区别</p>
+</li>
+<li><p>字符串转数值的规则</p>
+<ul>
+<li>以字母开头的字符串，永远为0</li>
+<li>以数字开头的字符串，永远为1，取到碰到字符串为止（例如$b= ‘1.1.1abc’,echo(int) $b ➡ 1.1）</li>
+</ul>
+</li>
+<li><p>整数类型</p>
+<ul>
+<li>$a = 100 ，十进制</li>
+<li>$a = 0b111 二进制</li>
+<li>$a=0120 八进制(前跟0)</li>
+<li>$a = 0x120 十六进制 (0x)</li>
+</ul>
+</li>
+<li><p>@错误抑制符</p>
+</li>
+</ol>
+<h3 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h3><p>$_GET:获取所有表单以get方式提交的数据</p>
+<p>$_POST:POST提交的数据都会保存于此</p>
+<p>$_REQUEST：GET和POST提交的都会保存</p>
+<p>$GLOBALS：PHP所有的全局变量</p>
+<p>$_SERVER:服务器信息</p>
+<p>$_SEESION:session会话数据</p>
+<p>$_COOKIE:cookie会话数据</p>
+<p>$_ENV:环境信息</p>
+<p>$_FILES:用户上传的文件信息</p>
+<h3 id="系统常量"><a href="#系统常量" class="headerlink" title="系统常量"></a>系统常量</h3><p>PHP_VERSION : PHP版本号</p>
+<p>PHP_INT_SIZE: 整形大小(表示整形所占用的字节数)</p>
+<p>PHP_INT_MAX:  整形所能表示的最大值(比如c语言中int所能表示的最大值)，PHP整形中允许出现负号</p>
+<p>系统魔术常量:魔术常量的值会跟着环境变化,用户改变不了</p>
+<p>_<em>DIR_</em>: 当前被执行的脚本所在电脑的绝对路径</p>
+<p>_<em>FILE_</em>: 当前被执行的脚本所在电脑的绝对路径，（带自己文件的名字）</p>
+<p>__LINE__：当前所在的行数</p>
+<p>__NAMESPACE__：当前所属的命名空间</p>
+<p>__CLASS__：当前所属的类</p>
+<p>__METHOD__：当前所属的方法</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol>
 <li>unset($变量名): 删除变量</li>
+<li>is_XXX(), xxx指int，float等，该函数用来判断变量类型，如果正确返回true ，错误返回false</li>
+<li>Var_dump（变量1，变量2……），查看变量类型</li>
+<li>Gettype(变量名): 获取类型（无值）</li>
+<li>Settype（变量名,类型）:设定数据类型 ，与强制转换不同<ul>
+<li>强制转换是对数据值复制的内容进行处理，不改变存储内容，例如强制转换一个变量后，用gettype获取类型，依旧是原来的类型</li>
+<li>settype会改变数据本身</li>
+</ul>
+</li>
+<li><ul>
+<li>Decbin(): 十进制转二进制</li>
+<li>Decoct()：十进制转八进制</li>
+<li>Dechex(): 十进制转十六进制</li>
+<li>Bindec(): 二进制转十六进制</li>
+</ul>
+</li>
+<li>Empty():判断数据是否为空</li>
+<li>Isset(): 判断数据存储的变量是否存在</li>
 </ol>
 
           
