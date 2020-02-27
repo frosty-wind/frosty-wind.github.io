@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="frosty的博客">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;最近在学习git的使用这里简单的记录一下。附上学习网址 操作本地指令 vi 文件名，可以进入到编写模式，若该文件不存在则自动创建 PS:&amp;emsp;vi进入后需要按下 i 进入到插入模式,退出时按下ESC再输入:wq就能够退出  git add filename，可以将文件上传到缓存区(stage)  git commit -m “(注释)”，可以将缓存区(全部)上传到分支">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-11T14:01:37.131Z">
+<meta property="og:updated_time" content="2020-01-22T13:31:17.384Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -96,7 +96,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/frosty.github.io/',
-    scheme: 'Mist',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -398,6 +398,10 @@
 
 我总结一下，将仓库中的.git目录打开(因为是隐藏没文件夹，没有该目录，需要设置，自己上网搜一下就有了)，打开config文件,将url后面的改为https模式形式，具体网址为GitHub上项目的网址，项目中有可以 直接复制网址的按钮，直接使用即可没然后就能git push了</code></pre></li>
 <li><p>此后上传文件使用 $git push origin master 即可</p>
+<p>推送其他分支就用git push origin (对应分支名如dev)</p>
+</li>
+<li><p>当你的伙伴向项目的分支push了，那么你push会失败，这个时候应该先pull一下本地合并，再push</p>
+<p>注：git pull 可能会失败，因为未将远程的dev和本地的dev链接，根据下面的提示输入命令后再pull</p>
 </li>
 </ol>
 <h2 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h2><ol>
@@ -416,7 +420,7 @@
 </li>
 <li><p>git branch ,查看当前分支</p>
 </li>
-<li><p>git merge (分支),将指定分支的结果合并到master上</p>
+<li><p>git merge (分支),合并指定分支到当前分支</p>
 <p>git merge –no-ff -m “(tag)” (分支),禁用FASTWARD模式，使之能够查看分支历史，（注意ff前只有一个 <em>-</em>。）</p>
 </li>
 <li><p>git branch -d (分支),将指定分支删除</p>
@@ -424,6 +428,8 @@
 <li><p>git log –graph,查看分支合并情况</p>
 </li>
 <li><p>git stash,储藏现场(已经使用过了git add才能用)，注意时分支</p>
+</li>
+<li><p>git stash list 查看储存</p>
 </li>
 <li><p>git stash apply,恢复</p>
 </li>
@@ -436,6 +442,28 @@
 </li>
 <li><p>git cheery-pick (commitid)</p>
 <p>当你在分支工作的时候，需要在主分支修改一个bug,在stash分支，并在主分支改动后，你需要将改bug的改动回到分支上，否则在后面合并的时候会报错，这个指令可以将改错弄到分支上</p>
+</li>
+<li><p>git remote 查看远程库信息</p>
+<p>git remote -v 显示更相信信息</p>
+</li>
+</ol>
+<h1 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h1><ol>
+<li><p>git tag &lt;name&gt;创建标签 (先切换到要打标签的分支)</p>
+</li>
+<li><p>git tag 查看当前标签</p>
+</li>
+<li><p>git tag &lt;name&gt; commitid 向以前的commit打标签 </p>
+</li>
+<li><p>git show &lt;tagname&gt; 查看标签信息</p>
+</li>
+<li><p>git tag -a &lt;tagname&gt; -m “内容” commitid 用于创建带有说明的标签 -a指定标签名, -m指定说明名字</p>
+</li>
+<li><p>git tag -d &lt;tagname&gt;删除标签</p>
+</li>
+<li><p>git push origin &lt;tagname&gt;推送标签到远程</p>
+<p>git push origin –tags 推送全部未推送到远程的本地标签</p>
+<p>推送过后要删除标签需先在本地删除，然后从远程删除</p>
+<p>git push origin :refs/tags/&lt;tagname&gt;</p>
 </li>
 </ol>
 
@@ -557,7 +585,7 @@
               
                 <a href="/frosty.github.io/archives">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -568,7 +596,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/frosty.github.io/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -579,7 +607,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/frosty.github.io/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -612,7 +640,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作本地指令"><span class="nav-number">1.</span> <span class="nav-text">操作本地指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程仓库"><span class="nav-number">2.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接本地库"><span class="nav-number">2.1.</span> <span class="nav-text">链接本地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从远程库克隆"><span class="nav-number">2.2.</span> <span class="nav-text">从远程库克隆</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-number">3.</span> <span class="nav-text">分支</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作本地指令"><span class="nav-number">1.</span> <span class="nav-text">操作本地指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程仓库"><span class="nav-number">2.</span> <span class="nav-text">远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接本地库"><span class="nav-number">2.1.</span> <span class="nav-text">链接本地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从远程库克隆"><span class="nav-number">2.2.</span> <span class="nav-text">从远程库克隆</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-number">3.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标签管理"><span class="nav-number">4.</span> <span class="nav-text">标签管理</span></a></li></ol></div>
             
 
           </div>
@@ -632,7 +660,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -749,6 +777,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/frosty.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/frosty.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/frosty.github.io/js/src/scrollspy.js?v=5.1.4"></script>
