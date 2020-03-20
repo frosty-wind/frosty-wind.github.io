@@ -258,6 +258,1132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty.github.io/frosty.github.io/2020/03/20/Linux-centos6%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="frosty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/frosty.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="frosty的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/frosty.github.io/2020/03/20/Linux-centos6%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" itemprop="url">Linux_centos6网络配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T18:50:54+08:00">
+                2020-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/frosty.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天对vm中的centos6进行了网络配置在此记录一下</p>
+<p>setup配置</p>
+<p>vi /etc/sysconfig/network-scripts/ifcfg-th0 : 把ONBOOT=”no”改为ONBOOT=”yes”</p>
+<p>serviece network restart: 重启网络服务</p>
+<hr>
+<p>配置ip找了很多博客文章,终于找到一个能配成功能够ping通baidu的<a href="https://www.cnblogs.com/pigdata/p/10305530.html" target="_blank" rel="noopener">博客</a>) (若无法访问请科学上网)</p>
+<p>记录下需要的改动(包括之前文章学到的)</p>
+<ol>
+<li><p>将虚拟机网络设置为NAT模式</p>
+</li>
+<li><p>查看本网关,网关需要在虚拟机-编辑-虚拟网络编辑器-VMnet8-NAT查看网关</p>
+</li>
+<li><p>在本机查看DNS服务器(文章中未写,但可能需要配置下DNSip),可通过cmd输入ipconfig也可以直接查看网卡</p>
+</li>
+<li><p>进入setup配置(如何选项前文已提)</p>
+</li>
+<li><p>配置DNS,网关本机ip(直接在配置文件中配置也可以)</p>
+</li>
+<li><p>进入配置文件将BOOTPROTO的值改为static</p>
+</li>
+</ol>
+<hr>
+<p>记录下我最初配置的时候有哪些地方不同</p>
+<ol>
+<li>本机ip地址设置的时候:我设置的192.168.—.1和.2 , .1被占用后设置.2无法使用网络,文章中似乎暗示着本机ip地址设置相同网段后的值应大于网关?</li>
+<li>BOOTPROTO未设置为static,事后我又改动下不设置为static其实也能ping通baidu(所以我怀疑是我开始的时候网关与ip地址配置错误所以无法连接外网)</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty.github.io/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="frosty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/frosty.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="frosty的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url">虚拟机下安装Linux操作系统</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-12T19:18:53+08:00">
+                2020-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/frosty.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>附上<a href="https://www.bilibili.com/video/av18156598" target="_blank" rel="noopener">学习教程</a></p>
+<p>这里主要针对的是centos6版本,ISO镜像从官网下载即可</p>
+<p>打开虚拟机点击新建虚拟机</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image1.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image2.png" class>
+
+<p>剩下的除了设置一个安装路径,其他都是下一步</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image3.png" class>
+
+<p>设置ISO镜像文件</p>
+<p>介绍一些虚拟机的功能</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image4.png" class>
+
+<p>虚拟机快照,可以快速回到拍摄快照的时刻</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image5.png" class>
+
+<p>克隆功能</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image6.png" class>
+
+<p>克隆可以克隆一个完全一样的操作系统,比重新安装更方便,而且你使用多少内存占用多少内存</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image7.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image8.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image9.png" class>
+
+<p>一般用链接克隆,占的内存更小</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image10.png" class>
+
+
+
+<p>简单的系统分区知识</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image11.png" class>
+
+<p>/: 代表根目录</p>
+<p>系统安装</p>
+<p>注:centos想要进行图形安装界面,虚拟机分配的内存至少是628M</p>
+<p>启动的瞬间(在显示VM的界面时)迅速按下F2进入到BIOS</p>
+<p>需要进行设置,否则无法正常启动,把从硬盘启动改为从光盘启动</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image12.png" class>
+
+<p>将第3个调到第1个对系统进行安装(键入加号)</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image13.png" class>
+
+<p>对于真实机安装过后还需要将顺序调回改为先启动硬盘,否则每次启动都会启用光盘重装系统</p>
+<p>(虚拟机比较智能不需要)</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image14.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image15.png" class>
+
+<p>选择第一个</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image16.png" class>
+
+<p>选择跳过</p>
+<p>注:ctrl+Alt+Enter 进入全屏模式</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image17.png" class>
+
+<p>选择下一步</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image18.png" class>
+
+<p>选择中文简体</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image19.png" class>
+
+<p>选择键盘</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image20.png" class>
+
+<p>基础存储设备</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image21.png" class>
+
+<p>选择是</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image22.png" class>
+
+<p>选择主机名,建议不要修改</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image23.png" class>
+
+<p>时间直接默认</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image24.png" class>
+
+<p>设置密码</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image25.png" class>
+
+<p>自定义分区</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image26.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image27.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image28.png" class>
+
+<p>按照如图分区</p>
+<p>除了boot,swap分区其他一般看个人习惯(swap一般分内存的两倍,但这里是训练没有必要)</p>
+<p>在/(根目录)分区的时候选择分配全部分区</p>
+<p>然后下一步</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image29.png" class>
+
+<p>格式化</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image30.png" class>
+
+<p>选择将修改写入键盘</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image31.png" class>
+
+<p>直接下一步</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image32.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image33.png" class>
+
+<p>根据你服务器用来做什么的不同来选择不同的软件(一般服务器采用最小化安装,因为你安装的越少,报错的可能性越低,被攻击的可能性越低)</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image34.png" class>
+
+<p>这里为了达到学习的目的,我们不选择图形界面而是选择纯字符的,但又因为最小化种没有软件安装,对于初学者没有任何知识的情况下不适用,所以选择basic server(安装一些基本软件)</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image35.png" class>
+
+<p>进入安装界面</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image36.png" class>
+
+<p>重新引导</p>
+<p>注如果是真实机还需要进入BIOS界面改为先启动硬盘,否则看到的还是安装界面</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image37.png" class>
+
+<p>用户登入,一般使用初始用户(管理员用户,或者叫顶级用户),root</p>
+<p>注密码登入的时候不会像windows一样显示星号</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image38.png" class>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty.github.io/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="frosty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/frosty.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="frosty的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/" itemprop="url">初探Linux</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-27T17:41:47+08:00">
+                2020-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/frosty.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://www.bilibili.com/video/av18156598?p=12" target="_blank" rel="noopener">学习网站</a></p>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h2><h3 id="命令格式与目录处理命令ls"><a href="#命令格式与目录处理命令ls" class="headerlink" title="命令格式与目录处理命令ls"></a>命令格式与目录处理命令ls</h3><h4 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h4><p>命令格式: 命令 [-选项] [参数]</p>
+<p>例如:ls -la /etc</p>
+<p>说明</p>
+<ol>
+<li>个别命令使用不遵循此格式</li>
+<li>当有多个选项时,可以写在一起</li>
+<li>简化选项与完整选项: -a 等于 –all</li>
+</ol>
+<h4 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h4><p>原意: list</p>
+<p>命令所在路径/bin/ls</p>
+<p>语法: ls 选项[-ald] [文件或目录]</p>
+<p>注: tab键可以补全文件名</p>
+<p>-a 显示所有文件,包括隐藏文件(Linux中,以点开头的文件代表隐藏文件)</p>
+<p>-l 详细信息显示</p>
+<p>-d 查看目录属性</p>
+<p>-i 显示文件id号(Linux中系统通过id查找文件,每个文件都有一个id号)</p>
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/1.png" class>
+
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/2.png" class>
+
+<h3 id="处理命令"><a href="#处理命令" class="headerlink" title="处理命令"></a>处理命令</h3><p>mkdir :创建目录 (make directories)</p>
+<p>所在路径/bin/mkdir</p>
+<p>语法: mkdir -p [目录名]</p>
+<p>-p 递归创建 (例如要在tmp下创建一个hello_world目录然后再在hello_wrold目录下创建一个hello目录,需要加上-p选项)</p>
+<p>例: mkdir  /tmp/hello_world : 在tmp文件夹下创建hello_wrold 目录</p>
+<p>也可在同一条命令在创建多个目录,在命令后面继续加路径就可</p>
+<hr>
+<p>cd : 切换目录 (change directory)</p>
+<p>所在路径: shell内置命令</p>
+<hr>
+<p>pwd: 显示当前目录(print working directory)</p>
+<p>所在路径 /bin/pwd</p>
+<hr>
+<p>rmdir: 删除空目录 (remove empty directories)</p>
+<p>所在路径: /bin/rmdir</p>
+<hr>
+<p>cp :复制(copy)</p>
+<p>所在路径/bin/cp</p>
+<p>语法: cp -rp [原文件或目录][目标目录]</p>
+<p>-r : 复制目录(若复制的是目录则需要加上这个选项)</p>
+<p>-p : 保留文件属性</p>
+<p>Linux可在复制的时候更改文件名即在 目标目录下添加 /更改的名字</p>
+<p>注: 复制多个文件时只需在目标目录前加上相关路径即可,系统会默认认为最后一个是目标目录,前2个是要复制的文件</p>
+<p>若复制的目录下存在该文件,会提示你是否覆盖,y代表覆盖,n代表不覆盖</p>
+<hr>
+<p>mv:剪切 (move)</p>
+<p>所在路径 /bin/mv</p>
+<p>语法: mv [原文件或目录][目标目录]</p>
+<p>也可以用来改名 在目标目录直接输入更改的名字(理解为将文件移动到当前目录下,并更改名字)</p>
+<p>剪切目录的时候不需要</p>
+<hr>
+<p>rm : 删除文件或目录 (remove)</p>
+<p>所在路径/bing/rm</p>
+<p>语法: rm -rf [文件或目录]</p>
+<p>rm -rf * :删除当前文件夹下的所有内容</p>
+<p>-r 删除目录</p>
+<p>-f 强制执行 (若未添加该选项会提示你是否删除文件,需要恢复Y/N回复是否删除)</p>
+<hr>
+<p>touch : 创建空文件</p>
+<p>目录 /bin/touch</p>
+<p>语法: touch [文件名]</p>
+<p>当想创建一个文件,文件名有空格,用双引号将名字包裹,否者系统会认为是创建2个文件(不建议使用)</p>
+<hr>
+<p>cat: 显示文件内容</p>
+<p>所在路径 /bin/cat</p>
+<p>语法 cat [文件名]</p>
+<p>-n 显示行号</p>
+<hr>
+<p>tac:显示文件内容(反向列示)(命令是cat反过来)</p>
+<p>所在路径: /usr/bin/tac</p>
+<p>语法: tac[文件名]</p>
+<hr>
+<p>more: 分页显示文件内容</p>
+<p>所在路径: /bin/more</p>
+<p>语法: more [文件名]</p>
+<p>(空格)或f   翻页</p>
+<p>b          往回翻页</p>
+<p>(Enter)   换行</p>
+<p>q或Q  退出</p>
+<hr>
+<p>less: 分页下那是文件内容(可向上翻页)</p>
+<p>所在路径 /usr/bin/less</p>
+<p>按pgUp(pgDn)向上(下)翻页 (即上下键)</p>
+<p>语法: less [文件名]</p>
+<p>搜索: 键入 /关键词  , 按n(next)往后找</p>
+<hr>
+<p>head: 显示文件前几行</p>
+<p>所在路径 /usr/bin/head</p>
+<p>语法 head [文件名]  (默认前十行)</p>
+<p>-n 指定行数</p>
+<hr>
+<p>tail : 显示文件后面几行</p>
+<p>所在路径 /usr/bin/tail</p>
+<p>语法: tail [文件名]</p>
+<p>-n 指定行数</p>
+<p>-f 动态显示文件末尾内容</p>
+<hr>
+<p>In : 生成链接文件 (link)</p>
+<p>所在路径 /bin/In</p>
+<p>语法: In -s [源文件] [目标文件]</p>
+<p>-s : 创建软链接</p>
+<p>软链接特征:类似Windows快捷方式</p>
+<p>如何查看一个是否为硬链接,查看id序号,硬链接与原文件的id号一样</p>
+<p>硬链接类似拷贝(cp指令),但是与cp不同的是硬链接是与原文件同步更新的</p>
+<p>硬链接无法跨分区且无法针对目录(软链接可以)</p>
+<h2 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h2><h3 id="权限管理命令chmod"><a href="#权限管理命令chmod" class="headerlink" title="权限管理命令chmod"></a>权限管理命令chmod</h3><p>chmod : 更改文件或目录的权限 </p>
+<p>change the permissions mode of a life</p>
+<p>所在路径 /bin/chmod</p>
+<p>语法: chmod [{ugoa}{+-=}{rwx}] [文件或目录]</p>
+<p>[mode=421] [文件或目录]</p>
+<p>-R 递归修改 (给定的目录下的所有文件和目录都会进行相应的权限改变)</p>
+<p>ugoa: u:所拥有者(user) g:所属组(group) o:其他人(other) a:所有人(all),表明给所有人修改权限</p>
+<p>+-=: +:增加权限 -:减少权限 =:不管以前的权限,直接赋给现在键入的权限</p>
+<p>rwx: 权限分为r(read读权限)  w(write 写权限) x(exe执行权限)</p>
+<p>文件的权限</p>
+<p>r : cat/more/less/head/tail</p>
+<p>w: vim</p>
+<p>x: script command  (文件一般不具有x权限)</p>
+<p>目录的权限如下: </p>
+<p>r 读权限 可以查看文件内容 可以列出目录中的内容(ls)</p>
+<p>w 写权限 可以修改文件内容 可以在目录中创建、删除文件(touch/mkdir/rm)</p>
+<p>x 执行权限 可以执行文件 可以进入目录(cd)</p>
+<p>可以用逗号分隔对不同类别的人(ugoa)权限改动,如chmod u+x,o-r ……</p>
+<hr>
+<p>但在实际场景中,更常见的是用数字来代表权限</p>
+<p>r —-4</p>
+<p>w —-2</p>
+<p>x —-1</p>
+<p>rwxrw-r–</p>
+<p>7  6  4</p>
+<p>如 chmod 764 文件名</p>
+<h3 id="其他权限管理命令"><a href="#其他权限管理命令" class="headerlink" title="其他权限管理命令"></a>其他权限管理命令</h3><p>chown: 改变文件或目录的所有者 (change file ownership)</p>
+<p>所在路径 /bin/chown</p>
+<p>语法 : chown [用户] [文件或目录]</p>
+<hr>
+<p>chgrp: 改变文件或目录的所属组 (change file group ownership)</p>
+<p>所在路径 /bin/chgrp</p>
+<p>语法: chgrp [用户组] [文件或目录]</p>
+<p>注: 用户创建的时候如果不属于某个组,则用缺省组</p>
+<hr>
+<p>umask : 显示、设置文件的缺省权限(the user file-creation mask)</p>
+<p>所在路径: Shell内置命令</p>
+<p>注: 因文件一般不具有x权限,所以虽然显示的缺省组权限有x,但创建的文件都没有x权限</p>
+<p>语法: umask [-S]</p>
+<p>-S 以rwx形式显示新建文件缺省权限</p>
+<p>umask 值 (方法按下图所算,且不加第一个0,来配置初始值)</p>
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/3.png" class>
+
+<p>注文件一般是没有x权限的</p>
+<h2 id="文件搜索命令"><a href="#文件搜索命令" class="headerlink" title="文件搜索命令"></a>文件搜索命令</h2><h3 id="文件搜索命令find"><a href="#文件搜索命令find" class="headerlink" title="文件搜索命令find"></a>文件搜索命令find</h3><p>find :搜索</p>
+<p>所在路径/bin/find</p>
+<p>语法: find [搜索范围] [匹配条件]</p>
+<hr>
+<p>-name  </p>
+<p>eg : find /etc -name init 在给定目录下查找文件init</p>
+<p>-iname 不区分大小写 </p>
+<p>若查找含有init的文件则改为*init*</p>
+<p>若找开头为init后面有3个字母的文件则为 init???</p>
+<hr>
+<p>-size      +n 大于 -n 小于 n 等于</p>
+<p>eg find / -size +204800 在根目录下查找大于100MB的文件</p>
+<p>Linux大小是按数据块来的,1个数据块是512字节,0.5M,所以这里是204800而不是102400</p>
+<p>eg find /etc -size +163840 -a -size -204800</p>
+<p>在/etc下查找大于80MB小于100MB的文件</p>
+<p>-a  两个条件同时满足 (and) </p>
+<p>-o 两个条件满足任意一个即可 (or)</p>
+<hr>
+<p>find /home -user 123 在根目录下查找所有者为123的文件</p>
+<p>-group 根据所属组查找</p>
+<hr>
+<p>find /etc -cmin -5 (+是超过多长时间内)</p>
+<p>在/etc下查找5分钟内被修改过属性的文件和目录</p>
+<p>-amin 访问时间access (对应第一个字母,min是minute)</p>
+<p>-camin 文件属性change </p>
+<p>-mmin 文件内容 modify</p>
+<hr>
+<p>-a  两个条件同时满足 (and) </p>
+<p>-o 两个条件满足任意一个即可 (or)</p>
+<p>-exec/-ok 命令{} \ ;   (注意花括号与斜杠之间有空格,斜杠与分号之间没有空格)   对搜索结果执行操作</p>
+<p>ok与exec的区别在于, ok会问你是否查看,需要输入Y/N回答</p>
+<p>-type 根据文件类型查找 </p>
+<p>f: 文件 d:目录 l:软链接文件</p>
+<p>-type f : 只显示搜索到的文件</p>
+<p>-inum 根据i节点查找</p>
+<h3 id="其他搜索命令"><a href="#其他搜索命令" class="headerlink" title="其他搜索命令"></a>其他搜索命令</h3><p>locate :在文件资料库中查找文件</p>
+<p>所在路径 /usr/bin/locate</p>
+<p>语法: locate 文件名</p>
+<p>优点: 快速查找</p>
+<p>缺点:若在资料库中未更新则无法查找,不在资料库管辖的目录也无法查找到如(tmp,即使updatedb后也无法查到)</p>
+<p>updatedb: 用于更新资料库</p>
+<p>-i : 不区分大小写</p>
+<hr>
+<p>which: 搜索命令所在目录及别名信息</p>
+<p>所在路径 /usr/bin/which</p>
+<p>语法: which 命令</p>
+<p>eg: which ls</p>
+<p>路径上方的输出是别名</p>
+<p>比如rm本身不会提示确认的,但实际是rm -i的别名所以会有提示,而你直接/bin/rm 删除的文件,无需确认直接删除(centos6不针对7及以上)</p>
+<hr>
+<p>whereis: 搜索命令所在目录及帮助文档路径</p>
+<p>所在路径 /usr/bin/whereis</p>
+<p>语法: whereis [命令名称]</p>
+<hr>
+<p>grep: 在文件中搜寻字串匹配的行并输出</p>
+<p>语法: grep -iv [指定字串] [文件]</p>
+<p>-i 不区分大小写</p>
+<p>-v 排除指定字串 (去掉含有该字串的行)</p>
+<p>eg grep mysql /root/install.log 返回mysql的行</p>
+<h2 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h2><p>man :获得帮助信息 (manual)</p>
+<p>所在路径 /usr/bin/man</p>
+<p>语法: man [命令或配置文件]</p>
+<p>空格翻页,回车往下翻,q退出,输入/-l可以迅速找到有-l的句子,按n下一页</p>
+<p>如果想看一个配置文件详细信息(如/etc/services),直接输入man services(不能加绝对路径)</p>
+<p>Linux帮助中得到的路径man1和man5(如通过whereis得到) , man1是针对命令的帮助, man5是对配置文档的帮助</p>
+<p>password 有配置文件帮助,有命令的帮助,默认是命令的帮助,若要看配置文件帮助,键入man 5 password</p>
+<hr>
+<p>info: 获得帮助信息</p>
+<p>语法: info 命令</p>
+<hr>
+<p>whatis: 获取命令的使用<strong>简短信息</strong>,只读取帮助文档中name部分的信息</p>
+<p>语法: whatis 命令</p>
+<hr>
+<p>apropos :获取命令配置文件的<strong>简短信息</strong></p>
+<p>语法: apropos 命令</p>
+<hr>
+<p>help : 查询命令相关选项</p>
+<p>语法: 命令 –help</p>
+<p>或者: help 命令</p>
+<p>获得shell内置命令的帮助信息(若which 命令  找不到命令路径的命令是shell内置的命令)</p>
+<p>shell内置命令无法用man得到详细信息</p>
+<h2 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h2><p>useradd: 添加新用户</p>
+<p>路径 /usr/sbin/useradd</p>
+<p>语法: useradd 用户名</p>
+<hr>
+<p>passwd</p>
+<p>所在路径 /usr/bin/passwd</p>
+<p>语法: passwd 用户名</p>
+<hr>
+<p>who:查看登录用户信息</p>
+<p>所在路径 /usr/bin/who</p>
+<p>语法: who</p>
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/4.png" class>
+
+<hr>
+<p>w:查看登录用户详细信息</p>
+<p>所在路径/usr/bin/w</p>
+<p>语法 w</p>
+<h2 id="压缩解压"><a href="#压缩解压" class="headerlink" title="压缩解压"></a>压缩解压</h2><h3 id="Linux压缩格式"><a href="#Linux压缩格式" class="headerlink" title="Linux压缩格式"></a>Linux压缩格式</h3><p>.gz </p>
+<p>.zip  :不许装其他软件</p>
+<p>.rar: 装rar解压</p>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>gzip: 压缩文件 (GNU zip)</p>
+<p>路径 /bin/gzip</p>
+<p>语法: gzip 文件</p>
+<p>压缩过后不保存原文件</p>
+<p>注: gzip -d是解压缩</p>
+<hr>
+<p>gunzip: 解压缩.gz的压缩文件 (GNU unzip)</p>
+<p>所在路径 /bin/gunzip</p>
+<p>语法: gunzip 压缩文件</p>
+<p>只能压缩文件,不能压缩目录</p>
+<hr>
+<p>tar: 打包目录</p>
+<p>所在路径 /bin/tar</p>
+<p>语法: tar 选项[-zcf] [压缩后文件名] [目录]</p>
+<p>-c: 打包</p>
+<p>-v: 显示详细信t息</p>
+<p>-f: 指定文件名</p>
+<p>-z :打包同时压缩</p>
+<p>若不加-z,一般是先打包再用gzip压缩(若要)</p>
+<p>压缩后文件格式 .tar.gz</p>
+<p>注: 虽然不加后缀名也可以,但是一般会加上,便于识别一个文件是不是压缩包</p>
+<p> 尽量采用(zcvf这个顺序)</p>
+<p>-x:解包</p>
+<p>-v:显示详细信息</p>
+<p>-f: 指定解压文件</p>
+<p>-z :解压缩</p>
+<p>顺序尽量才有(-zxvf)</p>
+<hr>
+<p>zip: 压缩文件或目录</p>
+<p>所在路径 /usr/bin/zip</p>
+<p>语法: zip 选项[-r] [压缩后文件名] [文件或目录]</p>
+<p>-r 压缩目录</p>
+<p>压缩后文件格式: .zip</p>
+<hr>
+<p>unzip: 解压.zip的压缩文件</p>
+<p>所在路径: /usr/bin/unzip</p>
+<p>语法: unzip [压缩文件]</p>
+<hr>
+<p>bzip2 : 压缩文件</p>
+<p>所在路径 : /usr/bin/bzip2</p>
+<p>语法: bzip2 选项[-k] [文件]</p>
+<p>-k 产生压缩文件后保留原文件</p>
+<p>压缩后格式 .bz2</p>
+<p>如果是压缩目录可以用 tar -c<strong>j</strong>f(z换成j)</p>
+<hr>
+<p>bunzip2: 解压缩</p>
+<p>所在路径: /usr/bin/bunzip2</p>
+<p>语法: bunzip2 选项 [-k] [压缩文件] </p>
+<p>-k 解压缩后保留原文件</p>
+<p>解压.tar.bz2 也可以用tar 的解压命令,不过把前文中的-z换成-j</p>
+<h2 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h2><p>write : 给用户发信息,以Ctrl+D保存结束</p>
+<p>所在路径 /usr/bin/write</p>
+<p>语法: write&lt;用户名&gt;</p>
+<p>进入以后输错删错了需按Ctrl + Backsapce(退格键) 或者delete</p>
+<p>用户不在线发不出去</p>
+<hr>
+<p>wall : 发广播信息(write all)</p>
+<p>所在路径/usr/bin/wall</p>
+<p>语法: wall [message]</p>
+<hr>
+<p>ping: 测试网络连通性</p>
+<p>所在路径/bin/ping</p>
+<p>语法: ping 选项 IP地址</p>
+<p>-c 指定发送次数</p>
+<p>如果无-c选项,会一直ping除非按ctrl+C</p>
+<hr>
+<p>ifconfig : 查看和设置网卡信息(<strong>注意这里针对的是centos6,对于更高版本的请根据版本决定</strong>)</p>
+<p>所在路径 /sbin/ifconfig</p>
+<p>语法: ifconfig 网卡名称 IP地址 (查看无需跟任何东西)</p>
+<p>eth0 : 本地真实网卡有其他网卡则是eth1</p>
+<p>lo: 回访网卡,本机通信于测试</p>
+<p>注: 用这种方法设置ip,重启会自动断掉</p>
+<hr>
+<p>mail : 查看发送电子邮件  针对centos6</p>
+<p>所在路径 /bin/mail</p>
+<p>语法: mail[用户名]</p>
+<p>mail 不跟任何内容可以显示邮箱(弹出的界面开头的n表示new,未读 )</p>
+<p>邮件保存在/var/spool/mail/root</p>
+<p>进入自己的邮箱后,查看内容输入序列号即可</p>
+<p>h: 显示当前邮箱文件</p>
+<p>d [序列号]: 删除邮件</p>
+<p>q : 退出</p>
+<p>(用户不在线也能成功发送)</p>
+<hr>
+<p>last : 列出目前于过去登入系统的用户信息</p>
+<p>所在路径: /usr/bin/last</p>
+<p>语法: last</p>
+<hr>
+<p>lastlog: 列出所有用户(包括未登录过的),然后显示登录状态</p>
+<p>所在路径 :usr/bin/lastlog</p>
+<p>语法: lastlog</p>
+<hr>
+<p>tarceroute: 显示数据包到主机间的路径</p>
+<p>所在路径: /bin/tarceroute</p>
+<p>语法: traceroute 主机域名</p>
+<hr>
+<p>netstat: 显示网络相关信息</p>
+<p>所在路径: /bin/netstat</p>
+<p>语法: netstat [选项]</p>
+<p>-t : TCP协议</p>
+<p>-u : UDP协议</p>
+<p>-l : 监听</p>
+<p>-r : 路由</p>
+<p>-n : 显示IP地址和端口号</p>
+<p>netstat -tlum : 查看本机监听的端口</p>
+<p>netstat -an 查看本机所有网络连接</p>
+<p>netstat -rn 查看本机路由表</p>
+<hr>
+<p>setup : 配置网络</p>
+<p>所在路径: /usr/bin/setup</p>
+<p>语法: settup</p>
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/5.png" class>
+
+<p>配ip进入网络配置</p>
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/6.png" class>
+
+<p>进入设备配置</p>
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/7.png" class>
+
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/8.png" class>
+
+<p>自己配置需要像PHCP中的星号去掉</p>
+<hr>
+<p>mount : 挂载命令</p>
+<p>所在路径 /bin/mount</p>
+<p>语法: mount [-t 文件系统] 设备文件名 挂载点</p>
+<p>取消挂载直接在mount前加u即可,后面挂载点,光驱都行</p>
+<p>一般是 mount /dev/sr0 挂载点(自己的一个目录)</p>
+<h2 id="关机重启命令"><a href="#关机重启命令" class="headerlink" title="关机重启命令"></a>关机重启命令</h2><p>shutdown: 关机</p>
+<p>语法 : shutdown [选项] 时间</p>
+<p>-c: 取消前一个关机命令</p>
+<p>-h: 关机</p>
+<p>-r: 重启</p>
+<p>shutdown -j 20:30 (20:30关机,now就是现在关机)</p>
+<hr>
+<p>其他关机命令:</p>
+<p>halt</p>
+<p>poweroff</p>
+<p>init 0</p>
+<hr>
+<p>其他重启命令</p>
+<p>reboot</p>
+<p>init 6</p>
+<hr>
+<p>系统运行级别</p>
+<p>0 : 关机</p>
+<p>1 : 单用户 : 只启动最核心的程序(类似windows的安全模式)</p>
+<p>2: 不完全多用户,不含NFS服务 (NFS是传文件的一个简单服务)</p>
+<p>3: 完全多用户</p>
+<p>4: 未分配</p>
+<p>5: 图形界面</p>
+<p>6: 重启</p>
+<p>1，2，3都没有图形界面</p>
+<p>cat /etc/inittab (init的配置文件)  :修改系统默认运行级别</p>
+<p>runlevel :查询系统运行级别</p>
+<hr>
+<p>logout: 退出登录命令</p>
+<h1 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h1><h2 id="VIM常用操作-centos-6"><a href="#VIM常用操作-centos-6" class="headerlink" title="VIM常用操作(centos 6)"></a>VIM常用操作(centos 6)</h2><p>vi filename:进入命令模式</p>
+<p>:wq :退出vim</p>
+<p>i a o:命令模式➡插入模式     退出:ESC</p>
+<p>:(输入冒号) ：进入编辑模式</p>
+<hr>
+<p>插入命令:</p>
+<p>a : 在光标虽在字符后插入</p>
+<p>A: 在光标所在行尾插入</p>
+<p>i: …..字符前(省略处于a,A相同)</p>
+<p>I: 所在行首</p>
+<p>o: 光标下插入新行</p>
+<p>O: 在光标上插入新行</p>
+<hr>
+<p>定位命令:</p>
+<p>:srt nu :设置行号</p>
+<p>:set nu :取消行号</p>
+<p>gg: 到第一行</p>
+<p>G:到最后一行</p>
+<p>nG:到第n行 (先退到命令模式)</p>
+<p>:n 到第n行</p>
+<p>$:移至行尾</p>
+<p>0:移至行首</p>
+<hr>
+<p>删除命令</p>
+<p>x : 删除光标所在处字符</p>
+<p>nx :删除光标后n个字符</p>
+<p>dd : 删除光标所在行</p>
+<p>dG: 删除光标所在行到文件末尾的内容</p>
+<p>D : 删除光标所在处到行尾的内容</p>
+<p>:n1,n2d : 删除指定范围的行</p>
+<hr>
+<p>复制剪切命令</p>
+<p>yy :复制当前行</p>
+<p>nyy : 复制当前一下n行</p>
+<p>dd : 剪切当前行</p>
+<p>ndd : 前街当前行一下n行</p>
+<p>p、P : 粘贴在当前光标所在行下或行上</p>
+<hr>
+<p>替换和取消命令</p>
+<p>r : 取代光标所在处字符</p>
+<p>R : 从光标所在处开始替换字符,按ESC结束</p>
+<p>u:取消上一步操作</p>
+<hr>
+<p>搜索和搜索替换命令</p>
+<p>/string : 搜索指定字符串, 搜索时忽略大小写: set ic</p>
+<p>n : 搜索指定字符串的下一个出现位置 (前一个用b)</p>
+<p>:%s /old_string /new_string /g :全文替换指定字符串, /g不询问确认, /c会讯问确认</p>
+<p>:n1,n2s /old /new /g : 指定行替换</p>
+<hr>
+<p>保存和退出命令</p>
+<p>:w 保存修改</p>
+<p>: w new_filename 另存为指定文件</p>
+<p>:wq 保存修改并退出</p>
+<p>ZZ :快捷键,保存修改并退出</p>
+<p>:q! 不保存修改退出</p>
+<p>:wq! 保存修改并退出(文件所有者及root可使用) , (当写权限被取消时,用此命令强行保存)</p>
+<h2 id="操作技巧"><a href="#操作技巧" class="headerlink" title="操作技巧"></a>操作技巧</h2><p>:r 文件名 导入当前文件中(到光标处)</p>
+<p>:!操作命令 : 可以在不退出vim实现操作</p>
+<p>:r !操作命令 将操作命令的结果导入vim中</p>
+<p>:map 快捷键 触发命令</p>
+<p>如 :map ^P I#&lt;ESC&gt; (注:^P可以通过ctrl+V+P一起按 或者先按ctrl +v 再按ctrl+p )</p>
+<p>后面键入ctrl + p 就可以自动调用了</p>
+<p>:ab 内容1 内容2 : 该定义可以使,在任何地方输入内容1按回车会让他变成内容2</p>
+<p>注:上面内容重启后会消失,若要保存进入到对应的宿主目录中键入即可 如root : /root/.vimrc, 其他人就是/home/username/.vimrc</p>
+<h1 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h1><h2 id="RPM包管理-rpm命令管理"><a href="#RPM包管理-rpm命令管理" class="headerlink" title="RPM包管理-rpm命令管理"></a>RPM包管理-rpm命令管理</h2><h3 id="RPM包命名规则"><a href="#RPM包命名规则" class="headerlink" title="RPM包命名规则"></a>RPM包命名规则</h3><p>安装包一般都在光盘中</p>
+<p>httpd-2.2.15-15.e16.centos.1.i686.rpm</p>
+<p>httpd:软件包名</p>
+<p>2.2.15:软件版本</p>
+<p>15 : 软件发布次数</p>
+<p>e16.centos 适合Linux平台</p>
+<p>i686 : 适合的硬件平台</p>
+<p>rmp: rpm包扩展名</p>
+<h3 id="rpm包依赖性"><a href="#rpm包依赖性" class="headerlink" title="rpm包依赖性"></a>rpm包依赖性</h3><p>rpm包具有依赖性</p>
+<p>比如装一个a必须要装一个b,装一个b需要装一个c</p>
+<p>依赖模块(一般是so结尾,且模块在库文件中),去<a href="http://www.rpmfind.net搜索该模块在哪个库文件" target="_blank" rel="noopener">www.rpmfind.net搜索该模块在哪个库文件</a></p>
+<h3 id="安装升级与卸载"><a href="#安装升级与卸载" class="headerlink" title="安装升级与卸载"></a>安装升级与卸载</h3><p>包全名: 操作的包是没有安装的软件包时,使用包全名。而且要注意路径</p>
+<p>包名:操作已经安装的软件包时,使用包命。是搜索/var/lib/rpm/中的数据库</p>
+<hr>
+<p>rpm安装</p>
+<p>rpm -ivh 包全名 (一般-ivh全都写)</p>
+<p>选项:</p>
+<p>-i(install) 安装</p>
+<p>-v(verbose) 显示详细信息</p>
+<p>-h(hash)  显示进度</p>
+<p>–nodeps 不检测依赖性 (一般不会加这条命令)</p>
+<hr>
+<p>rpm包升级</p>
+<p>rpm -Uvh 包全名</p>
+<p>-U (upgrade)升级</p>
+<hr>
+<p>rmp包卸载</p>
+<p>rpm -e 包名(可以不写包全名)</p>
+<p>选项:</p>
+<p>-e(erase) 卸载</p>
+<p>–nodeps 不检查依赖性</p>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>查询是否安装</p>
+<p>rpm -q 包命</p>
+<p>-q (query) : 查询</p>
+<p>rpm -qa </p>
+<p>-a(all) : 所有 </p>
+<hr>
+<p>查询软件包详细信息</p>
+<p>rpm -qi 包名</p>
+<p>-i :查询软件信息(information)</p>
+<p>-p :查询未安装包信息(package) (因为未安装,所以查询时输入包全名)</p>
+<hr>
+<p>查询包中文件安装位置</p>
+<p>rpm -ql 包命</p>
+<p>-l(list) 列表</p>
+<p>-p(package):查询未安装包信息</p>
+<hr>
+<p>查询系统文件属性哪个rpm包</p>
+<p>rpm -qf 系统文件名</p>
+<p>-f(file) 查询系统文件属于哪个软件包</p>
+<hr>
+<p>rpm -qR 包名</p>
+<p>-R 查询软件包的依赖性 (requires)</p>
+<p>-p 查询未安装包信息(package)</p>
+<hr>
+<p>rpm包校验</p>
+<p>rpm -V 已安装的包名</p>
+<p>-V(verify) 校验指定RPM包中的文件</p>
+<p>验证信息</p>
+<p>S 文件大小是否改变</p>
+<p>M 文件的类型或文件的权限(rwx)是否改变</p>
+<p>5 文件MD5校验和是否改变(可以看成文件内容是否改变)</p>
+<p>D 设备中,从代码是否改变</p>
+<p>L 文件路径是否改变</p>
+<p>U 文件的属主(所有者)是否改变</p>
+<p>G 文件的属组是否改变</p>
+<p>T 文件的修改时间是否改变</p>
+<p>文件类型</p>
+<p>c :配置文件 </p>
+<p>d: 普通文档</p>
+<p>g: “鬼”文件,很少见,就是该文件不应该被这个RPM包包含</p>
+<p>l : 授权文件</p>
+<p>r: 描述文件</p>
+<p>rpm包中文件提取</p>
+<p>rpm2cpio 包全名 | \</p>
+<p>cpio -idv .文件绝对路径 (点代表从指定文件路径提取到当前文件路径)</p>
+<p>(rpm2cpio: 将rpm包转换为cpio格式的命令)</p>
+<p>(cpio 一个标准工具,它用于创建软件档案文件和从档案文件中提取文件)</p>
+<p>cpio 选项 &lt;[文件|设备]</p>
+<p>-i : copy-in 模式,还原</p>
+<p>-d : 还原时自动新建目录</p>
+<p>-v : 显示还原过程</p>
+<h2 id="RPM包管理-yum在线管理"><a href="#RPM包管理-yum在线管理" class="headerlink" title="RPM包管理-yum在线管理"></a>RPM包管理-yum在线管理</h2><p>yum能解决依赖性问题,yum安装服务器会自动解决依赖性问题</p>
+<h3 id="IP地址配置和网络yum源"><a href="#IP地址配置和网络yum源" class="headerlink" title="IP地址配置和网络yum源"></a>IP地址配置和网络yum源</h3><h4 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty.github.io/frosty.github.io/2019/12/24/HTML-CSS-JS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -352,20 +1478,86 @@
         
           
             <p><strong><u><a href="https://www.bilibili.com/video/av10298843?p=1" target="_blank" rel="noopener">学习网站</a></u></strong></p>
-<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><ol>
-<li><pre><code class="html"><span class="comment">&lt;!-- html5 的基本头--&gt;</span>
-<span class="meta">&lt;!DOCTYPE html&gt;</span>                     <span class="comment">&lt;!--声明。(HTML5)--&gt;</span>    
-<span class="tag">&lt;<span class="name">html</span>&gt;</span>
-<span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>                 <span class="comment">&lt;!--以及头部head,语言--&gt;</span>
-    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span>        <span class="comment">&lt;!--设置编码--&gt;</span>
-    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span>                <span class="comment">&lt;!--标题,显示的网页边栏的标题--&gt;</span>
-<span class="tag">&lt;/<span class="name">head</span>&gt;</span>                            <span class="comment">&lt;!--头结束--&gt;</span>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html5 的基本头--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span>		 			<span class="comment">&lt;!--声明。(HTML5)--&gt;</span>	</span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span> 				<span class="comment">&lt;!--以及头部head,语言--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span>		<span class="comment">&lt;!--设置编码--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span>				<span class="comment">&lt;!--标题,显示的网页边栏的标题--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span>    						<span class="comment">&lt;!--头结束--&gt;</span></span><br><span class="line">    </span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span>							<span class="comment">&lt;!--网页主体部分--&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span>							<span class="comment">&lt;!--主体结束--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span>    						<span class="comment">&lt;!--网页结束--&gt;</span></span><br></pre></td></tr></table></figure>
 
- <span class="tag">&lt;<span class="name">body</span>&gt;</span>                            <span class="comment">&lt;!--网页主体部分--&gt;</span>
 
-<span class="tag">&lt;/<span class="name">body</span>&gt;</span>                            <span class="comment">&lt;!--主体结束--&gt;</span>
-<span class="tag">&lt;/<span class="name">html</span>&gt;</span>                            <span class="comment">&lt;!--网页结束--&gt;</span>
-<span class="comment"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. **\&lt;h1&gt;**：标题 可为h1,h2......h6。</span><br><span class="line"></span><br><span class="line">3. **\&lt;p&gt;\&lt;/p&gt;**: 包围的部分为一个段落，不需要再输入换行标签</span><br><span class="line"></span><br><span class="line">4. 超链接：导入其他网站</span><br><span class="line"></span><br><span class="line">   **\&lt;a href=&quot;网页url&quot;&gt; **&quot;网页上链接显示的内容&quot;\&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">5. **\&lt;img src=&quot;路径(相对/绝对)&quot;&gt;**  ：显示图片          </span><br><span class="line"></span><br><span class="line">6. **\&lt;br/&gt;**：换行</span><br><span class="line"></span><br><span class="line">7. HTML格式化 (**均需要结束标记**)</span><br><span class="line"></span><br><span class="line">   **\&lt;b&gt;**：定义粗体文本</span><br><span class="line"></span><br><span class="line">   **\&lt;big&gt;**: 定义大号字</span><br><span class="line"></span><br><span class="line">   **\&lt;em&gt;**: 定义着重文字</span><br><span class="line"></span><br><span class="line">   **\&lt;i&gt;**: 定义斜体字</span><br><span class="line"></span><br><span class="line">   **\&lt;small&gt;**: 定义小号字</span><br><span class="line"></span><br><span class="line">   **\&lt;strong&gt;**: 定义加重语气</span><br><span class="line"></span><br><span class="line">   **\&lt;sub&gt;**: 定义下标字 </span><br><span class="line"></span><br><span class="line">   **\&lt;sup&gt;**:定义上标字	类似于次方的数字上标</span><br><span class="line"></span><br><span class="line">   **\&lt;ins&gt;**: 定义插入字   下划线</span><br><span class="line"></span><br><span class="line">   **\&lt;del&gt;** : 定义删除字</span><br><span class="line"></span><br><span class="line">## 标签属性</span><br><span class="line"></span><br><span class="line">1. \&lt;h1&gt;:align对齐方式 —— \&lt;h1 align = &quot;right&quot;&gt;\&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">2. \&lt;body&gt;:bgcolor背景颜色  ,background设置背景图片 </span><br><span class="line"></span><br><span class="line">3. \&lt;a&gt;: target规定在何处打开链接  _blank 新页面 , _self本地打开</span><br><span class="line"></span><br><span class="line">4. 通用属性 </span><br><span class="line"></span><br><span class="line">   class : 规定元素类名</span><br><span class="line"></span><br><span class="line">   id :      规定ID</span><br><span class="line"></span><br><span class="line">   style  : \&lt;style type=&quot;text/css&quot;&gt;\&lt;/style&gt;	规定元素样式，一般放在头文件(head包括中的)，</span><br><span class="line"></span><br><span class="line">   title    : 规定元素的额外信息</span><br><span class="line"></span><br><span class="line">## HTML样式</span><br><span class="line"></span><br><span class="line">1. 标签:</span><br><span class="line"></span><br><span class="line">   \&lt;style&gt;:定义样式</span><br><span class="line"></span><br><span class="line">   \&lt;link&gt;: 资源引用</span><br><span class="line"></span><br><span class="line">2. 属性:</span><br><span class="line"></span><br><span class="line">   rel = &quot;stylesheet&quot;:外部样式表</span><br><span class="line"></span><br><span class="line">   type = &quot;text/css&quot;: 引入文档的类型</span><br><span class="line"></span><br><span class="line">   margin-left: 边距</span><br><span class="line"></span><br><span class="line">------------------------</span><br><span class="line"></span><br><span class="line">三种样式表插入方法:</span><br><span class="line"></span><br><span class="line">* 外部样式表:从外部文件中导入,放在head中</span><br><span class="line"></span><br><span class="line">  \&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; herf= &quot;mystyle.css&quot;&gt; </span><br><span class="line"></span><br><span class="line">* 内部样式表:直接在网页内部书写</span><br><span class="line"></span><br><span class="line">  \&lt;style type= &quot;text css&quot;&gt;</span><br><span class="line"></span><br><span class="line">  body &#123;background-color: 颜色&#125;</span><br><span class="line"></span><br><span class="line">  p &#123;margin-left: 20px&#125;</span><br><span class="line"></span><br><span class="line">  \&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">* 内联样式表:</span><br><span class="line"></span><br><span class="line">  \&lt;p style= &quot;color:red&quot;&gt;  ——直接在标签中改</span><br><span class="line"></span><br><span class="line">------------------</span><br><span class="line"></span><br><span class="line">## HTML链接</span><br><span class="line"></span><br><span class="line">### 链接数据</span><br><span class="line"></span><br><span class="line">1. 文字链接 </span><br><span class="line"></span><br><span class="line">   ```html</span><br><span class="line">   &lt;a href=&quot;地址&quot;&gt;&apos;你想要变成链接的文字&apos;&lt;/a&gt;</span><br></pre></td></tr></table></figure></span></code></pre>
+
+
+
+
+
+
+
+<ol>
+<li><p><strong><h1></h1></strong>：标题 可为h1,h2……h6。</p>
+</li>
+<li><p><strong><p>&lt;/p&gt;</p></strong>: 包围的部分为一个段落，不需要再输入换行标签</p>
+</li>
+<li><p>超链接：导入其他网站</p>
+<p>*<em>&lt;a href=”网页url”&gt; *</em>“网页上链接显示的内容”&lt;/a&gt;</p>
+</li>
+<li><p><strong>&lt;img src=”路径(相对/绝对)”&gt;</strong>  ：显示图片          </p>
+</li>
+<li><p><strong>&lt;br/&gt;</strong>：换行</p>
+</li>
+<li><p>HTML格式化 (<strong>均需要结束标记</strong>)</p>
+<p><strong>&lt;b&gt;</strong>：定义粗体文本</p>
+<p><strong>&lt;big&gt;</strong>: 定义大号字</p>
+<p><strong>&lt;em&gt;</strong>: 定义着重文字</p>
+<p><strong>&lt;i&gt;</strong>: 定义斜体字</p>
+<p><strong>&lt;small&gt;</strong>: 定义小号字</p>
+<p><strong>&lt;strong&gt;</strong>: 定义加重语气</p>
+<p><strong>&lt;sub&gt;</strong>: 定义下标字 </p>
+<p><strong>&lt;sup&gt;</strong>:定义上标字    类似于次方的数字上标</p>
+<p><strong>&lt;ins&gt;</strong>: 定义插入字   下划线</p>
+<p><strong>&lt;del&gt;</strong> : 定义删除字</p>
+</li>
+</ol>
+<h2 id="标签属性"><a href="#标签属性" class="headerlink" title="标签属性"></a>标签属性</h2><ol>
+<li><p>&lt;h1&gt;:align对齐方式 —— &lt;h1 align = “right”&gt;&lt;/h1&gt;</p>
+</li>
+<li><p>&lt;body&gt;:bgcolor背景颜色  ,background设置背景图片 </p>
+</li>
+<li><p>&lt;a&gt;: target规定在何处打开链接  _blank 新页面 , _self本地打开</p>
+</li>
+<li><p>通用属性 </p>
+<p>class : 规定元素类名</p>
+<p>id :      规定ID</p>
+<p>style  : &lt;style type=”text/css”&gt;&lt;/style&gt;    规定元素样式，一般放在头文件(head包括中的)，</p>
+<p>title    : 规定元素的额外信息</p>
+</li>
+</ol>
+<h2 id="HTML样式"><a href="#HTML样式" class="headerlink" title="HTML样式"></a>HTML样式</h2><ol>
+<li><p>标签:</p>
+<p>&lt;style&gt;:定义样式</p>
+<p>&lt;link&gt;: 资源引用</p>
+</li>
+<li><p>属性:</p>
+<p>rel = “stylesheet”:外部样式表</p>
+<p>type = “text/css”: 引入文档的类型</p>
+<p>margin-left: 边距</p>
+</li>
+</ol>
+<hr>
+<p>三种样式表插入方法:</p>
+<ul>
+<li><p>外部样式表:从外部文件中导入,放在head中</p>
+<p>&lt;link rel=”stylesheet” type=”text/css” herf= “mystyle.css”&gt; </p>
+</li>
+<li><p>内部样式表:直接在网页内部书写</p>
+<p>&lt;style type= “text css”&gt;</p>
+<p>body {background-color: 颜色}</p>
+<p>p {margin-left: 20px}</p>
+<p>&lt;/style&gt;</p>
+</li>
+<li><p>内联样式表:</p>
+<p>&lt;p style= “color:red”&gt;  ——直接在标签中改</p>
+</li>
+</ul>
+<hr>
+<h2 id="HTML链接"><a href="#HTML链接" class="headerlink" title="HTML链接"></a>HTML链接</h2><h3 id="链接数据"><a href="#链接数据" class="headerlink" title="链接数据"></a>链接数据</h3><ol>
+<li><p>文字链接 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"地址"</span>&gt;</span>'你想要变成链接的文字'<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>图片链接</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">here</span>=<span class="string">"地址"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片地址"</span> <span class="attr">width</span>=<span class="string">"100px"</span> <span class="attr">height</span>=<span class="string">"100px"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -3135,13 +4327,207 @@
       
         
           
-            <h1 id="open打开文件出现的编码问题"><a href="#open打开文件出现的编码问题" class="headerlink" title="open打开文件出现的编码问题"></a>open打开文件出现的编码问题</h1><p>&emsp;&emsp;最近在使用open函数打开文件时输出时弹出以下错误信息</p>
+            <p>学习教材0基础入门学习python(后面标题分类为书中章节)</p>
+<h1 id="变量、分支、循环、条件、函数等常规内容"><a href="#变量、分支、循环、条件、函数等常规内容" class="headerlink" title="变量、分支、循环、条件、函数等常规内容"></a>变量、分支、循环、条件、函数等常规内容</h1><h2 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h2><p>print() : 输出</p>
+<p>input():用户输入,同时括号内的内容为提示用户的内容</p>
+<h2 id="3-2"><a href="#3-2" class="headerlink" title="3.2"></a>3.2</h2><p>python可对字符串进行拼接</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">"3"</span></span><br><span class="line">b = <span class="string">"5"</span></span><br><span class="line">c = a + b </span><br><span class="line">print(c) <span class="comment"># 输出35</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h2><p>在字符串前加一个r,代表原始字符串,即字符串中若出现转义(如\n)会默认为不换行而是以原样输出</p>
+<h2 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h2><p>在python中”””内容”””(3对引号),输出时结果会以引号中的换行模式输出</p>
+<h2 id="3-6"><a href="#3-6" class="headerlink" title="3.6"></a>3.6</h2><p>python中的条件分支语法如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件 : <span class="comment"># python中需要打一个冒号,这样同时也能在第二行缩进,缩进是python辨认顺寻的一个重要方法</span></span><br><span class="line">    内容</span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">    内容</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-7"><a href="#3-7" class="headerlink" title="3.7"></a>3.7</h2><p>python中的循环也一样,针对while需要加冒号</p>
+<h2 id="3-8"><a href="#3-8" class="headerlink" title="3.8"></a>3.8</h2><p>产生随机数可以用random模块,调用函数randint().使用之前先导入import random</p>
+<p>如</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">a = random.randint(<span class="number">1</span>,<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-9"><a href="#3-9" class="headerlink" title="3.9"></a>3.9</h2><p>int()、float()、str():类型转换</p>
+<p>浮点数转整数,python会直接截断小数点后的数据</p>
+<p>type函数可用于判断数据类型</p>
+<p>isinstance(a,b):两个参数,将a,b数据类型比对,相同则返回true</p>
+<p>a:数据</p>
+<p>b:数据类型</p>
+<h2 id="3-10"><a href="#3-10" class="headerlink" title="3.10"></a>3.10</h2><ol>
+<li><p>python3中,整数除以整数得到的不一定是整数(很多编程语言会依然得到整数),而可能会变成浮点数</p>
+</li>
+<li><p>如果想得到整数可以用地板除法如 : 3//2 得到1</p>
+</li>
+</ol>
+<p>并且3.0 // 2 得到的依然是 1.0 (而不是1.5)</p>
+<ol start="3">
+<li>python中有not的逻辑运算符得到与操作数相反的布尔类型的值</li>
+<li>python中5&gt;3&lt;4行得通,会被拆解为5&gt;3 and 3&lt;4</li>
+</ol>
+<h2 id="4-1"><a href="#4-1" class="headerlink" title="4.1"></a>4.1</h2><p>if-else多次使用时可以简化为</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>  :</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">elif</span>   :</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-3"><a href="#4-3" class="headerlink" title="4.3"></a>4.3</h2><p>缩进是python的灵魂,如通过缩进来匹配if-else</p>
+<h2 id="4-4"><a href="#4-4" class="headerlink" title="4.4"></a>4.4</h2><p>三元操作符</p>
+<p>a = x if 条件 else y</p>
+<h2 id="4-5"><a href="#4-5" class="headerlink" title="4.5"></a>4.5</h2><p>断言: 当关键字后i按的条件为假的时候,程序自动崩溃</p>
+<p>语法: assert 条件</p>
+<h2 id="4-6"><a href="#4-6" class="headerlink" title="4.6"></a>4.6</h2><p>while循环</p>
+<p>语法:</p>
+<p>while 条件:</p>
+<p>​    &emsp;&emsp;循环体</p>
+<h2 id="4-7"><a href="#4-7" class="headerlink" title="4.7"></a>4.7</h2><p>for循环</p>
+<p>for 变量 in 可迭代对象:</p>
+<p>&emsp;&emsp;循环体</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> each <span class="keyword">in</span> <span class="string">"ABCDE"</span>:</span><br><span class="line">    print(each)</span><br><span class="line"><span class="comment">#输出结果为</span></span><br><span class="line">A</span><br><span class="line">B</span><br><span class="line">C</span><br><span class="line">D</span><br><span class="line">E</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>range(): 为指定的整数生成一个数字序列,例range(100),得到的就是1到99的数字序列</p>
+<p>语法: range(stop)</p>
+<p>range(start,stop)</p>
+<p>range(start,stop,step)</p>
+<p>第一张用法会从0开始步长为1变到stop</p>
+<p>若要输出出来先加上list,否则输出的是(start,stop)</p>
+<p>start,stop都可以是负数</p>
+<h2 id="4-8"><a href="#4-8" class="headerlink" title="4.8"></a>4.8</h2><p>break可以退出循环</p>
+<h2 id="4-9"><a href="#4-9" class="headerlink" title="4.9"></a>4.9</h2><p>continue可以跳出循环开始下一轮循环</p>
+<h2 id="4-10"><a href="#4-10" class="headerlink" title="4.10"></a>4.10</h2><p>while与for也可以有else语句</p>
+<p>当条件不成立的时候,执行else后的语句</p>
+<h2 id="5-1"><a href="#5-1" class="headerlink" title="5.1"></a>5.1</h2><p>列表(list):可以理解为数组</p>
+<ol>
+<li>创建列表 number = [1,2,3,4,5],可以用foreach循环</li>
+<li>列表可以添加不同类型的元素</li>
+</ol>
+<hr>
+<p>向列表添加元素(方法)</p>
+<ol>
+<li>append(a): 只支持一个参数</li>
+<li>extend([a,b….]): 多个参数,</li>
+<li>insert(索引值,[a,b,c])</li>
+</ol>
+<p>注: 语法均为 列表.方法名 (相当于列表是一个对象的实例化)</p>
+<p>extend只能添加列表</p>
+<p>insert列表,单个元素都可以,并且支持负数,表示与列表末尾的相对距离</p>
+<hr>
+<p>len(): 获取列表的长度(元素个数)</p>
+<p>通过索引值找元素的索引值也可以为负数,比如-1就是最后一个元素</p>
+<hr>
+<p>从列表中删除元素(前2个是方法)</p>
+<p>remove(): 指定一个待删除的元素(元素的值而不是索引值)</p>
+<p>pop():参数是索引值,不带参数默认是列表中的最后一个元素</p>
+<p>del: del 列表[索引值]:删除元素 , del 列表:删除列表</p>
+<hr>
+<p>列表切片</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">list1 = [ <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">list2 = list1[<span class="number">1</span>:<span class="number">100</span>]</span><br><span class="line"><span class="comment"># 列表2为[2,3] , 可以取到从头到尾(不包括尾的值),例如100改为2,那么列表2为[2]</span></span><br><span class="line">list3 = [:<span class="number">2</span>]</span><br><span class="line"><span class="comment"># 列表3为[1,2]</span></span><br><span class="line">list4 = [<span class="number">1</span>:]</span><br><span class="line"><span class="comment">#列表4为[2,3]</span></span><br><span class="line">list5 = [ : ]</span><br><span class="line"><span class="comment">#列表5为[1,2,3]</span></span><br><span class="line">list6 = [<span class="number">-1</span>:]</span><br><span class="line"><span class="comment">#列表6为[3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#列表切片还可以加上步长</span></span><br><span class="line">list7 = list1[::<span class="number">2</span>]</span><br><span class="line"><span class="comment">#列表7为[1,3]</span></span><br><span class="line">list8 = list1[::<span class="number">-1</span>]</span><br><span class="line"><span class="comment">#列表8为[3,2,1]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#这样得到的列表是原列表的拷贝,不会影响原列表</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>列表用大小比较符号的时候会拿出第一个元素比较</p>
+<p>+ 可以将两个列表连在一起</p>
+<p>* 可以将列表重复</p>
+<hr>
+<p>列表方法</p>
+<p>count():统计某个元素出现的次数</p>
+<p>index(,start,stop):返回某个元素第一次出现的索引值,start,stop不添加的话默认为从头开始</p>
+<p>reverse():将整个列表原地翻转</p>
+<p>sort():将列表元素进行排序,如果要逆向排序,在括号内输入reverse = ture即可</p>
+<h2 id="5-2"><a href="#5-2" class="headerlink" title="5.2"></a>5.2</h2><p>元组:与列表的最大区别,元组只可读,不可写。</p>
+<p>元组(tuple)创建与列表不同,使用小括号创建</p>
+<p>元组的标识符是逗号</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>) <span class="comment">#元组</span></span><br><span class="line">tuple2 = (<span class="number">1</span>) <span class="comment">#不是元组</span></span><br><span class="line">tuple3 = (<span class="number">1</span>,) <span class="comment">#是元组</span></span><br><span class="line">tuple4 = <span class="number">1</span> <span class="comment">#不是元组</span></span><br><span class="line">tuple5 = <span class="number">1</span>, <span class="comment"># 是元组</span></span><br></pre></td></tr></table></figure>
+
+<p>删除元组使用del 元组</p>
+<h2 id="5-3"><a href="#5-3" class="headerlink" title="5.3"></a>5.3</h2><p>字符串也可以通过索引来取值</p>
+<hr>
+<p>字符串的内置方法</p>
+<p>casefole():将所有字符改为小写</p>
+<p>count(sub[,start[,end]]):用于查找sub参数在start,end间出现的次数,start,stop没有时查找整个字符串</p>
+<p>find(sub[,start[,end]]): 如果找到了返回位置索引值,找不到返回-1</p>
+<p>index(sub[,start[,end]]):</p>
+<p>replace[old,new[,count]]:将字符串中的old参数指定的字符串转换为new参数指定的字符串</p>
+<p>split(sep=None,maxsplit=-1):拆分字符串,将sep的位置拆开,如str.split(sep=”,”)</p>
+<p>join:拼接字 用法区别 <strong>‘-‘.join(countries)</strong></p>
+<hr>
+<p>字符串格式化</p>
+<p>format: 方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"&#123;0&#125; love &#123;1&#125;"</span>.format(<span class="string">"I"</span>,<span class="string">"python"</span>)</span><br><span class="line"><span class="comment"># 结果为i love python</span></span><br><span class="line"><span class="string">" &#123;a&#125; love &#123;b&#125;"</span>.format(a = <span class="string">"I"</span> , b=<span class="string">"python"</span>)</span><br><span class="line"><span class="comment">#如果将0(位置参数)与关键字参数混着用,位置参数放在关键字参数之前</span></span><br></pre></td></tr></table></figure>
+
+<p>%</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">"I LOVE "</span></span><br><span class="line">str2 = <span class="string">"PYTHON"</span></span><br><span class="line"><span class="string">"%s%s"</span> % (str1,str2)</span><br><span class="line"><span class="comment">#得到的时 I LOVE PYTHON</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-4"><a href="#5-4" class="headerlink" title="5.4"></a>5.4</h2><p>序列(列表、元组、字符串)内建方法</p>
+<p>list(): 将元素迭代放入列表</p>
+<p>tuple(): 将可迭代对象转换为元组,用法与list一样</p>
+<p>str(): 转换为字符串</p>
+<p>len():返回参数长度</p>
+<p>max():返回参数最大值 (方法)</p>
+<p>min(): 返回最小值(方法)</p>
+<p>sum():返回元素和</p>
+<p>sorted(): 与sort不同的时,它返回的是一个新列表(方法)</p>
+<p>reversed():逆转与sorted(方法)</p>
+<p>enumerate():生成2元组(2个元素的元组),(可以结合for each用,)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b = list(<span class="string">"python"</span>) <span class="comment"># b = ['p','y','t','h','o','n']</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-1"><a href="#6-1" class="headerlink" title="6.1"></a>6.1</h2><p>函数创建使用def关键字</p>
+<p>函数返回多个值的时候用元组打包</p>
+<p>函数给参数指定False的时候就不会传值进去</p>
+<h2 id="6-2"><a href="#6-2" class="headerlink" title="6.2"></a>6.2</h2><p>函数文档:用于给函数解释</p>
+<p>在函数内容中用&quot;“” &quot;“”包裹</p>
+<p>函数在传参的时候可以指定参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">(people,where)</span>:</span></span><br><span class="line">    print(<span class="string">"people"</span>+<span class="string">"在"</span>+<span class="string">"where"</span>+<span class="string">"say hello"</span>)</span><br><span class="line"><span class="comment"># 调用的时候可以指定参数</span></span><br><span class="line">hello(where = <span class="string">"home"</span>,people = <span class="string">"我"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>位置参数需要放在关键字参数前面</p>
+<p>python可以在定义时指定参数的默认值,若参数未传值,直接调用默认值</p>
+<hr>
+<p>当参数不确定个数的时候,可以在参数前加个<em>那么就可以添加多个参数,然后添加的\</em>的参数变成元组,如果还想要其他参数,那么在指定参数的具体值得时候需要使用关键字参数来赋值</p>
+<hr>
+<p>平时得*具有解包得作用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">print</span> (*num)</span><br><span class="line"><span class="comment">#得到的是1，2，3，4</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-3"><a href="#6-3" class="headerlink" title="6.3"></a>6.3</h2><p>如果在函数内部试图修改全局变量的值,python会创建一个新的局部变量替代(名字与全局变量相同)</p>
+<p>但可以在使用变量前给变量加个global关键字</p>
+<h2 id="6-4"><a href="#6-4" class="headerlink" title="6.4"></a>6.4</h2><p>lambda:定义匿名函数</p>
+<p>g= lambda x :2*x</p>
+<p>:分隔参数与返回值,左边是函数的参数,右边是函数的返回值</p>
+<hr>
+<p>filter()是一个过滤器</p>
+<p>2个参数,如果第一个参数是一个函数,则将第2个可迭代对象里的每一个元素作为函数的参数进行计算</p>
+<p>如果第一个参数为None,则直接将第2个参数中为True的值筛选出来</p>
+<hr>
+<p>map():2个参数,一个函数一个可迭代对象</p>
+<p>将可迭代对象的每一个元素作为函数的参数进行运算加工</p>
+<h2 id="7-1"><a href="#7-1" class="headerlink" title="7.1"></a>7.1</h2><p>字典</p>
+<p>dict1={索引:值,索引:值}  (注意:用的是大括号)</p>
+<p>也可以用内置函数dict创建字典</p>
+<p>dict2 = dict(a=1,b=2) 有多种方式创建</p>
+<p>改变字典的值方法与列表一样,如果键在字典中没有则自动添加</p>
+<hr>
+<p>内置方法</p>
+<p>fromkeys: 创建并返回一个新的字典</p>
+<p>keys():返回字典所有的键</p>
+<p>value():返回字典所有的值</p>
+<p>items():返回字典的键值对</p>
+<p>get():当键不存在的时候不会报错</p>
+<p>clear():清空字典</p>
+<p>pop():给定键弹出对应值</p>
+<p>popitem():弹出一个项</p>
+<p>update():更新字典</p>
+<p>在函数调用时参数前加**会使参数变成字典</p>
+<h2 id="7-2"><a href="#7-2" class="headerlink" title="7.2"></a>7.2</h2><p>集合</p>
+<p>如果使用{}没加上映射关系则代表使集合</p>
+<p>集合中的元素唯一,重复的元素自动删除</p>
+<p>集合使无序的,无法通过索引找到值</p>
+<p>除了直接用{},函数set也可以创建集合</p>
+<p>读取集合中的值可以用for each in 集合</p>
+<hr>
+<p>用in 和 not in 判断元素是否在集合中</p>
+<hr>
+<p>方法</p>
+<p>add():添加元素</p>
+<p>remove():删除集合中已知的元素</p>
+<h2 id="open打开文件出现的编码问题"><a href="#open打开文件出现的编码问题" class="headerlink" title="open打开文件出现的编码问题"></a>open打开文件出现的编码问题</h2><p>&emsp;&emsp;最近在使用open函数打开文件时输出时弹出以下错误信息</p>
+<img src="/frosty.github.io/2019/11/26/python%E5%AD%A6%E4%B9%A0/1.png" class>
 
 <p>&emsp;&emsp;经谷歌搜索后发现是编码问题，采用了jbk编码无法识别，所以我们将编码设置为<strong>UTF-8</strong>即可</p>
+<img src="/frosty.github.io/2019/11/26/python%E5%AD%A6%E4%B9%A0/2.png" class>
 
 
-<h1 id="为什么在open函数打开目录前加个r"><a href="#为什么在open函数打开目录前加个r" class="headerlink" title="为什么在open函数打开目录前加个r"></a>为什么在open函数打开目录前加个r</h1><p>&emsp;&emsp;我在学习python过程中发现使用open函数时文件名前加了个r(如上图所示)，不加不行，一直不知道为什么，而且发现有时候不加又可以运行，现在才知道时因为前者没有使用\\导致可能会出现转义字符的使用，所以需要加个r使路径不使用转义字符(这本来在之前学习的时候看过，但忘了，果然还是得经常复习)</p>
+
 
           
         
@@ -3560,7 +4946,7 @@
               
                 <a href="/frosty.github.io/archives">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -3571,7 +4957,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/frosty.github.io/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -3582,7 +4968,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/frosty.github.io/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

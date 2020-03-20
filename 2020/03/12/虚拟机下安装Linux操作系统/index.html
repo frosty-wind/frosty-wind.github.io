@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/frosty.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/frosty.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/frosty.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/frosty.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/frosty.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/frosty.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/frosty.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="附上学习教程 这里主要针对的是centos6版本,ISO镜像从官网下载即可 打开虚拟机点击新建虚拟机     剩下的除了设置一个安装路径,其他都是下一步   设置ISO镜像文件 介绍一些虚拟机的功能   虚拟机快照,可以快速回到拍摄快照的时刻   克隆功能   克隆可以克隆一个完全一样的操作系统,比重新安装更方便,而且你使用多少内存占用多少内存       一般用链接克隆,占的内存更小     简">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虚拟机下安装Linux操作系统">
+<meta property="og:url" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;index.html">
+<meta property="og:site_name" content="frosty的博客">
+<meta property="og:description" content="附上学习教程 这里主要针对的是centos6版本,ISO镜像从官网下载即可 打开虚拟机点击新建虚拟机     剩下的除了设置一个安装路径,其他都是下一步   设置ISO镜像文件 介绍一些虚拟机的功能   虚拟机快照,可以快速回到拍摄快照的时刻   克隆功能   克隆可以克隆一个完全一样的操作系统,比重新安装更方便,而且你使用多少内存占用多少内存       一般用链接克隆,占的内存更小     简">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image6.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image7.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image8.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image9.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image10.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image11.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image12.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image13.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image14.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image15.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image16.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image17.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image18.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image19.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image20.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image21.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image22.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image23.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image24.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image25.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image26.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image27.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image28.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image29.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image30.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image31.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image32.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image33.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image34.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image35.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image36.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image37.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image38.png">
+<meta property="og:updated_time" content="2020-03-12T12:28:50.561Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;12&#x2F;%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&#x2F;image1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/frosty.github.io/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://frosty-wind.github.io/frosty.github.io/2020/03/12/虚拟机下安装Linux操作系统/"/>
+
+
+
+
+
+  <title>虚拟机下安装Linux操作系统 | frosty的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/frosty.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">frosty的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/frosty.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/frosty.github.io/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/frosty.github.io/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/frosty.github.io/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/frosty.github.io/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty.github.io/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="frosty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/frosty.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="frosty的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">虚拟机下安装Linux操作系统</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-12T19:18:53+08:00">
+                2020-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/frosty.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>附上<a href="https://www.bilibili.com/video/av18156598" target="_blank" rel="noopener">学习教程</a></p>
+<p>这里主要针对的是centos6版本,ISO镜像从官网下载即可</p>
+<p>打开虚拟机点击新建虚拟机</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image1.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image2.png" class>
+
+<p>剩下的除了设置一个安装路径,其他都是下一步</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image3.png" class>
+
+<p>设置ISO镜像文件</p>
+<p>介绍一些虚拟机的功能</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image4.png" class>
+
+<p>虚拟机快照,可以快速回到拍摄快照的时刻</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image5.png" class>
+
+<p>克隆功能</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image6.png" class>
+
+<p>克隆可以克隆一个完全一样的操作系统,比重新安装更方便,而且你使用多少内存占用多少内存</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image7.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image8.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image9.png" class>
+
+<p>一般用链接克隆,占的内存更小</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image10.png" class>
+
+
+
+<p>简单的系统分区知识</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image11.png" class>
+
+<p>/: 代表根目录</p>
+<p>系统安装</p>
+<p>注:centos想要进行图形安装界面,虚拟机分配的内存至少是628M</p>
+<p>启动的瞬间(在显示VM的界面时)迅速按下F2进入到BIOS</p>
+<p>需要进行设置,否则无法正常启动,把从硬盘启动改为从光盘启动</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image12.png" class>
+
+<p>将第3个调到第1个对系统进行安装(键入加号)</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image13.png" class>
+
+<p>对于真实机安装过后还需要将顺序调回改为先启动硬盘,否则每次启动都会启用光盘重装系统</p>
+<p>(虚拟机比较智能不需要)</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image14.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image15.png" class>
+
+<p>选择第一个</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image16.png" class>
+
+<p>选择跳过</p>
+<p>注:ctrl+Alt+Enter 进入全屏模式</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image17.png" class>
+
+<p>选择下一步</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image18.png" class>
+
+<p>选择中文简体</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image19.png" class>
+
+<p>选择键盘</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image20.png" class>
+
+<p>基础存储设备</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image21.png" class>
+
+<p>选择是</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image22.png" class>
+
+<p>选择主机名,建议不要修改</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image23.png" class>
+
+<p>时间直接默认</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image24.png" class>
+
+<p>设置密码</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image25.png" class>
+
+<p>自定义分区</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image26.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image27.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image28.png" class>
+
+<p>按照如图分区</p>
+<p>除了boot,swap分区其他一般看个人习惯(swap一般分内存的两倍,但这里是训练没有必要)</p>
+<p>在/(根目录)分区的时候选择分配全部分区</p>
+<p>然后下一步</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image29.png" class>
+
+<p>格式化</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image30.png" class>
+
+<p>选择将修改写入键盘</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image31.png" class>
+
+<p>直接下一步</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image32.png" class>
+
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image33.png" class>
+
+<p>根据你服务器用来做什么的不同来选择不同的软件(一般服务器采用最小化安装,因为你安装的越少,报错的可能性越低,被攻击的可能性越低)</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image34.png" class>
+
+<p>这里为了达到学习的目的,我们不选择图形界面而是选择纯字符的,但又因为最小化种没有软件安装,对于初学者没有任何知识的情况下不适用,所以选择basic server(安装一些基本软件)</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image35.png" class>
+
+<p>进入安装界面</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image36.png" class>
+
+<p>重新引导</p>
+<p>注如果是真实机还需要进入BIOS界面改为先启动硬盘,否则看到的还是安装界面</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image37.png" class>
+
+<p>用户登入,一般使用初始用户(管理员用户,或者叫顶级用户),root</p>
+<p>注密码登入的时候不会像windows一样显示星号</p>
+<img src="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image38.png" class>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/frosty.github.io/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/" rel="next" title="初探Linux">
+                <i class="fa fa-chevron-left"></i> 初探Linux
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/frosty.github.io/2020/03/20/Linux-centos6%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" rel="prev" title="Linux_centos6网络配置">
+                Linux_centos6网络配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">frosty</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/frosty.github.io/archives">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/frosty.github.io/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/frosty.github.io/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">frosty</span>
+
+  
+</div>
+
+
+
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/frosty.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/frosty.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/frosty.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/frosty.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/frosty.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/frosty.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/frosty.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/frosty.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

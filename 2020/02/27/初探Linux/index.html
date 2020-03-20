@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/frosty.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/frosty.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/frosty.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/frosty.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/frosty.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/frosty.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/frosty.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="学习网站 常用命令文件处理命令命令格式与目录处理命令ls命令格式命令格式: 命令 [-选项] [参数] 例如:ls -la &#x2F;etc 说明  个别命令使用不遵循此格式 当有多个选项时,可以写在一起 简化选项与完整选项: -a 等于 –all  ls原意: list 命令所在路径&#x2F;bin&#x2F;ls 语法: ls 选项[-ald] [文件或目录] 注: tab键可以补全文件名 -a 显示所有文件,包括隐藏">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初探Linux">
+<meta property="og:url" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;02&#x2F;27&#x2F;%E5%88%9D%E6%8E%A2Linux&#x2F;index.html">
+<meta property="og:site_name" content="frosty的博客">
+<meta property="og:description" content="学习网站 常用命令文件处理命令命令格式与目录处理命令ls命令格式命令格式: 命令 [-选项] [参数] 例如:ls -la &#x2F;etc 说明  个别命令使用不遵循此格式 当有多个选项时,可以写在一起 简化选项与完整选项: -a 等于 –all  ls原意: list 命令所在路径&#x2F;bin&#x2F;ls 语法: ls 选项[-ald] [文件或目录] 注: tab键可以补全文件名 -a 显示所有文件,包括隐藏">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;02&#x2F;27&#x2F;%E5%88%9D%E6%8E%A2Linux&#x2F;1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;02&#x2F;27&#x2F;%E5%88%9D%E6%8E%A2Linux&#x2F;2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;02&#x2F;27&#x2F;%E5%88%9D%E6%8E%A2Linux&#x2F;3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;02&#x2F;27&#x2F;%E5%88%9D%E6%8E%A2Linux&#x2F;4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;02&#x2F;27&#x2F;%E5%88%9D%E6%8E%A2Linux&#x2F;5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;02&#x2F;27&#x2F;%E5%88%9D%E6%8E%A2Linux&#x2F;6.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;02&#x2F;27&#x2F;%E5%88%9D%E6%8E%A2Linux&#x2F;7.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;02&#x2F;27&#x2F;%E5%88%9D%E6%8E%A2Linux&#x2F;8.png">
+<meta property="og:updated_time" content="2020-03-20T10:53:38.628Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;02&#x2F;27&#x2F;%E5%88%9D%E6%8E%A2Linux&#x2F;1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/frosty.github.io/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://frosty-wind.github.io/frosty.github.io/2020/02/27/初探Linux/"/>
+
+
+
+
+
+  <title>初探Linux | frosty的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/frosty.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">frosty的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/frosty.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/frosty.github.io/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/frosty.github.io/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/frosty.github.io/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/frosty.github.io/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty.github.io/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="frosty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/frosty.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="frosty的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">初探Linux</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-27T17:41:47+08:00">
+                2020-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/frosty.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.bilibili.com/video/av18156598?p=12" target="_blank" rel="noopener">学习网站</a></p>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h2><h3 id="命令格式与目录处理命令ls"><a href="#命令格式与目录处理命令ls" class="headerlink" title="命令格式与目录处理命令ls"></a>命令格式与目录处理命令ls</h3><h4 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h4><p>命令格式: 命令 [-选项] [参数]</p>
+<p>例如:ls -la /etc</p>
+<p>说明</p>
+<ol>
+<li>个别命令使用不遵循此格式</li>
+<li>当有多个选项时,可以写在一起</li>
+<li>简化选项与完整选项: -a 等于 –all</li>
+</ol>
+<h4 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h4><p>原意: list</p>
+<p>命令所在路径/bin/ls</p>
+<p>语法: ls 选项[-ald] [文件或目录]</p>
+<p>注: tab键可以补全文件名</p>
+<p>-a 显示所有文件,包括隐藏文件(Linux中,以点开头的文件代表隐藏文件)</p>
+<p>-l 详细信息显示</p>
+<p>-d 查看目录属性</p>
+<p>-i 显示文件id号(Linux中系统通过id查找文件,每个文件都有一个id号)</p>
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/1.png" class>
+
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/2.png" class>
+
+<h3 id="处理命令"><a href="#处理命令" class="headerlink" title="处理命令"></a>处理命令</h3><p>mkdir :创建目录 (make directories)</p>
+<p>所在路径/bin/mkdir</p>
+<p>语法: mkdir -p [目录名]</p>
+<p>-p 递归创建 (例如要在tmp下创建一个hello_world目录然后再在hello_wrold目录下创建一个hello目录,需要加上-p选项)</p>
+<p>例: mkdir  /tmp/hello_world : 在tmp文件夹下创建hello_wrold 目录</p>
+<p>也可在同一条命令在创建多个目录,在命令后面继续加路径就可</p>
+<hr>
+<p>cd : 切换目录 (change directory)</p>
+<p>所在路径: shell内置命令</p>
+<hr>
+<p>pwd: 显示当前目录(print working directory)</p>
+<p>所在路径 /bin/pwd</p>
+<hr>
+<p>rmdir: 删除空目录 (remove empty directories)</p>
+<p>所在路径: /bin/rmdir</p>
+<hr>
+<p>cp :复制(copy)</p>
+<p>所在路径/bin/cp</p>
+<p>语法: cp -rp [原文件或目录][目标目录]</p>
+<p>-r : 复制目录(若复制的是目录则需要加上这个选项)</p>
+<p>-p : 保留文件属性</p>
+<p>Linux可在复制的时候更改文件名即在 目标目录下添加 /更改的名字</p>
+<p>注: 复制多个文件时只需在目标目录前加上相关路径即可,系统会默认认为最后一个是目标目录,前2个是要复制的文件</p>
+<p>若复制的目录下存在该文件,会提示你是否覆盖,y代表覆盖,n代表不覆盖</p>
+<hr>
+<p>mv:剪切 (move)</p>
+<p>所在路径 /bin/mv</p>
+<p>语法: mv [原文件或目录][目标目录]</p>
+<p>也可以用来改名 在目标目录直接输入更改的名字(理解为将文件移动到当前目录下,并更改名字)</p>
+<p>剪切目录的时候不需要</p>
+<hr>
+<p>rm : 删除文件或目录 (remove)</p>
+<p>所在路径/bing/rm</p>
+<p>语法: rm -rf [文件或目录]</p>
+<p>rm -rf * :删除当前文件夹下的所有内容</p>
+<p>-r 删除目录</p>
+<p>-f 强制执行 (若未添加该选项会提示你是否删除文件,需要恢复Y/N回复是否删除)</p>
+<hr>
+<p>touch : 创建空文件</p>
+<p>目录 /bin/touch</p>
+<p>语法: touch [文件名]</p>
+<p>当想创建一个文件,文件名有空格,用双引号将名字包裹,否者系统会认为是创建2个文件(不建议使用)</p>
+<hr>
+<p>cat: 显示文件内容</p>
+<p>所在路径 /bin/cat</p>
+<p>语法 cat [文件名]</p>
+<p>-n 显示行号</p>
+<hr>
+<p>tac:显示文件内容(反向列示)(命令是cat反过来)</p>
+<p>所在路径: /usr/bin/tac</p>
+<p>语法: tac[文件名]</p>
+<hr>
+<p>more: 分页显示文件内容</p>
+<p>所在路径: /bin/more</p>
+<p>语法: more [文件名]</p>
+<p>(空格)或f   翻页</p>
+<p>b          往回翻页</p>
+<p>(Enter)   换行</p>
+<p>q或Q  退出</p>
+<hr>
+<p>less: 分页下那是文件内容(可向上翻页)</p>
+<p>所在路径 /usr/bin/less</p>
+<p>按pgUp(pgDn)向上(下)翻页 (即上下键)</p>
+<p>语法: less [文件名]</p>
+<p>搜索: 键入 /关键词  , 按n(next)往后找</p>
+<hr>
+<p>head: 显示文件前几行</p>
+<p>所在路径 /usr/bin/head</p>
+<p>语法 head [文件名]  (默认前十行)</p>
+<p>-n 指定行数</p>
+<hr>
+<p>tail : 显示文件后面几行</p>
+<p>所在路径 /usr/bin/tail</p>
+<p>语法: tail [文件名]</p>
+<p>-n 指定行数</p>
+<p>-f 动态显示文件末尾内容</p>
+<hr>
+<p>In : 生成链接文件 (link)</p>
+<p>所在路径 /bin/In</p>
+<p>语法: In -s [源文件] [目标文件]</p>
+<p>-s : 创建软链接</p>
+<p>软链接特征:类似Windows快捷方式</p>
+<p>如何查看一个是否为硬链接,查看id序号,硬链接与原文件的id号一样</p>
+<p>硬链接类似拷贝(cp指令),但是与cp不同的是硬链接是与原文件同步更新的</p>
+<p>硬链接无法跨分区且无法针对目录(软链接可以)</p>
+<h2 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h2><h3 id="权限管理命令chmod"><a href="#权限管理命令chmod" class="headerlink" title="权限管理命令chmod"></a>权限管理命令chmod</h3><p>chmod : 更改文件或目录的权限 </p>
+<p>change the permissions mode of a life</p>
+<p>所在路径 /bin/chmod</p>
+<p>语法: chmod [{ugoa}{+-=}{rwx}] [文件或目录]</p>
+<p>[mode=421] [文件或目录]</p>
+<p>-R 递归修改 (给定的目录下的所有文件和目录都会进行相应的权限改变)</p>
+<p>ugoa: u:所拥有者(user) g:所属组(group) o:其他人(other) a:所有人(all),表明给所有人修改权限</p>
+<p>+-=: +:增加权限 -:减少权限 =:不管以前的权限,直接赋给现在键入的权限</p>
+<p>rwx: 权限分为r(read读权限)  w(write 写权限) x(exe执行权限)</p>
+<p>文件的权限</p>
+<p>r : cat/more/less/head/tail</p>
+<p>w: vim</p>
+<p>x: script command  (文件一般不具有x权限)</p>
+<p>目录的权限如下: </p>
+<p>r 读权限 可以查看文件内容 可以列出目录中的内容(ls)</p>
+<p>w 写权限 可以修改文件内容 可以在目录中创建、删除文件(touch/mkdir/rm)</p>
+<p>x 执行权限 可以执行文件 可以进入目录(cd)</p>
+<p>可以用逗号分隔对不同类别的人(ugoa)权限改动,如chmod u+x,o-r ……</p>
+<hr>
+<p>但在实际场景中,更常见的是用数字来代表权限</p>
+<p>r —-4</p>
+<p>w —-2</p>
+<p>x —-1</p>
+<p>rwxrw-r–</p>
+<p>7  6  4</p>
+<p>如 chmod 764 文件名</p>
+<h3 id="其他权限管理命令"><a href="#其他权限管理命令" class="headerlink" title="其他权限管理命令"></a>其他权限管理命令</h3><p>chown: 改变文件或目录的所有者 (change file ownership)</p>
+<p>所在路径 /bin/chown</p>
+<p>语法 : chown [用户] [文件或目录]</p>
+<hr>
+<p>chgrp: 改变文件或目录的所属组 (change file group ownership)</p>
+<p>所在路径 /bin/chgrp</p>
+<p>语法: chgrp [用户组] [文件或目录]</p>
+<p>注: 用户创建的时候如果不属于某个组,则用缺省组</p>
+<hr>
+<p>umask : 显示、设置文件的缺省权限(the user file-creation mask)</p>
+<p>所在路径: Shell内置命令</p>
+<p>注: 因文件一般不具有x权限,所以虽然显示的缺省组权限有x,但创建的文件都没有x权限</p>
+<p>语法: umask [-S]</p>
+<p>-S 以rwx形式显示新建文件缺省权限</p>
+<p>umask 值 (方法按下图所算,且不加第一个0,来配置初始值)</p>
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/3.png" class>
+
+<p>注文件一般是没有x权限的</p>
+<h2 id="文件搜索命令"><a href="#文件搜索命令" class="headerlink" title="文件搜索命令"></a>文件搜索命令</h2><h3 id="文件搜索命令find"><a href="#文件搜索命令find" class="headerlink" title="文件搜索命令find"></a>文件搜索命令find</h3><p>find :搜索</p>
+<p>所在路径/bin/find</p>
+<p>语法: find [搜索范围] [匹配条件]</p>
+<hr>
+<p>-name  </p>
+<p>eg : find /etc -name init 在给定目录下查找文件init</p>
+<p>-iname 不区分大小写 </p>
+<p>若查找含有init的文件则改为*init*</p>
+<p>若找开头为init后面有3个字母的文件则为 init???</p>
+<hr>
+<p>-size      +n 大于 -n 小于 n 等于</p>
+<p>eg find / -size +204800 在根目录下查找大于100MB的文件</p>
+<p>Linux大小是按数据块来的,1个数据块是512字节,0.5M,所以这里是204800而不是102400</p>
+<p>eg find /etc -size +163840 -a -size -204800</p>
+<p>在/etc下查找大于80MB小于100MB的文件</p>
+<p>-a  两个条件同时满足 (and) </p>
+<p>-o 两个条件满足任意一个即可 (or)</p>
+<hr>
+<p>find /home -user 123 在根目录下查找所有者为123的文件</p>
+<p>-group 根据所属组查找</p>
+<hr>
+<p>find /etc -cmin -5 (+是超过多长时间内)</p>
+<p>在/etc下查找5分钟内被修改过属性的文件和目录</p>
+<p>-amin 访问时间access (对应第一个字母,min是minute)</p>
+<p>-camin 文件属性change </p>
+<p>-mmin 文件内容 modify</p>
+<hr>
+<p>-a  两个条件同时满足 (and) </p>
+<p>-o 两个条件满足任意一个即可 (or)</p>
+<p>-exec/-ok 命令{} \ ;   (注意花括号与斜杠之间有空格,斜杠与分号之间没有空格)   对搜索结果执行操作</p>
+<p>ok与exec的区别在于, ok会问你是否查看,需要输入Y/N回答</p>
+<p>-type 根据文件类型查找 </p>
+<p>f: 文件 d:目录 l:软链接文件</p>
+<p>-type f : 只显示搜索到的文件</p>
+<p>-inum 根据i节点查找</p>
+<h3 id="其他搜索命令"><a href="#其他搜索命令" class="headerlink" title="其他搜索命令"></a>其他搜索命令</h3><p>locate :在文件资料库中查找文件</p>
+<p>所在路径 /usr/bin/locate</p>
+<p>语法: locate 文件名</p>
+<p>优点: 快速查找</p>
+<p>缺点:若在资料库中未更新则无法查找,不在资料库管辖的目录也无法查找到如(tmp,即使updatedb后也无法查到)</p>
+<p>updatedb: 用于更新资料库</p>
+<p>-i : 不区分大小写</p>
+<hr>
+<p>which: 搜索命令所在目录及别名信息</p>
+<p>所在路径 /usr/bin/which</p>
+<p>语法: which 命令</p>
+<p>eg: which ls</p>
+<p>路径上方的输出是别名</p>
+<p>比如rm本身不会提示确认的,但实际是rm -i的别名所以会有提示,而你直接/bin/rm 删除的文件,无需确认直接删除(centos6不针对7及以上)</p>
+<hr>
+<p>whereis: 搜索命令所在目录及帮助文档路径</p>
+<p>所在路径 /usr/bin/whereis</p>
+<p>语法: whereis [命令名称]</p>
+<hr>
+<p>grep: 在文件中搜寻字串匹配的行并输出</p>
+<p>语法: grep -iv [指定字串] [文件]</p>
+<p>-i 不区分大小写</p>
+<p>-v 排除指定字串 (去掉含有该字串的行)</p>
+<p>eg grep mysql /root/install.log 返回mysql的行</p>
+<h2 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h2><p>man :获得帮助信息 (manual)</p>
+<p>所在路径 /usr/bin/man</p>
+<p>语法: man [命令或配置文件]</p>
+<p>空格翻页,回车往下翻,q退出,输入/-l可以迅速找到有-l的句子,按n下一页</p>
+<p>如果想看一个配置文件详细信息(如/etc/services),直接输入man services(不能加绝对路径)</p>
+<p>Linux帮助中得到的路径man1和man5(如通过whereis得到) , man1是针对命令的帮助, man5是对配置文档的帮助</p>
+<p>password 有配置文件帮助,有命令的帮助,默认是命令的帮助,若要看配置文件帮助,键入man 5 password</p>
+<hr>
+<p>info: 获得帮助信息</p>
+<p>语法: info 命令</p>
+<hr>
+<p>whatis: 获取命令的使用<strong>简短信息</strong>,只读取帮助文档中name部分的信息</p>
+<p>语法: whatis 命令</p>
+<hr>
+<p>apropos :获取命令配置文件的<strong>简短信息</strong></p>
+<p>语法: apropos 命令</p>
+<hr>
+<p>help : 查询命令相关选项</p>
+<p>语法: 命令 –help</p>
+<p>或者: help 命令</p>
+<p>获得shell内置命令的帮助信息(若which 命令  找不到命令路径的命令是shell内置的命令)</p>
+<p>shell内置命令无法用man得到详细信息</p>
+<h2 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h2><p>useradd: 添加新用户</p>
+<p>路径 /usr/sbin/useradd</p>
+<p>语法: useradd 用户名</p>
+<hr>
+<p>passwd</p>
+<p>所在路径 /usr/bin/passwd</p>
+<p>语法: passwd 用户名</p>
+<hr>
+<p>who:查看登录用户信息</p>
+<p>所在路径 /usr/bin/who</p>
+<p>语法: who</p>
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/4.png" class>
+
+<hr>
+<p>w:查看登录用户详细信息</p>
+<p>所在路径/usr/bin/w</p>
+<p>语法 w</p>
+<h2 id="压缩解压"><a href="#压缩解压" class="headerlink" title="压缩解压"></a>压缩解压</h2><h3 id="Linux压缩格式"><a href="#Linux压缩格式" class="headerlink" title="Linux压缩格式"></a>Linux压缩格式</h3><p>.gz </p>
+<p>.zip  :不许装其他软件</p>
+<p>.rar: 装rar解压</p>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>gzip: 压缩文件 (GNU zip)</p>
+<p>路径 /bin/gzip</p>
+<p>语法: gzip 文件</p>
+<p>压缩过后不保存原文件</p>
+<p>注: gzip -d是解压缩</p>
+<hr>
+<p>gunzip: 解压缩.gz的压缩文件 (GNU unzip)</p>
+<p>所在路径 /bin/gunzip</p>
+<p>语法: gunzip 压缩文件</p>
+<p>只能压缩文件,不能压缩目录</p>
+<hr>
+<p>tar: 打包目录</p>
+<p>所在路径 /bin/tar</p>
+<p>语法: tar 选项[-zcf] [压缩后文件名] [目录]</p>
+<p>-c: 打包</p>
+<p>-v: 显示详细信t息</p>
+<p>-f: 指定文件名</p>
+<p>-z :打包同时压缩</p>
+<p>若不加-z,一般是先打包再用gzip压缩(若要)</p>
+<p>压缩后文件格式 .tar.gz</p>
+<p>注: 虽然不加后缀名也可以,但是一般会加上,便于识别一个文件是不是压缩包</p>
+<p> 尽量采用(zcvf这个顺序)</p>
+<p>-x:解包</p>
+<p>-v:显示详细信息</p>
+<p>-f: 指定解压文件</p>
+<p>-z :解压缩</p>
+<p>顺序尽量才有(-zxvf)</p>
+<hr>
+<p>zip: 压缩文件或目录</p>
+<p>所在路径 /usr/bin/zip</p>
+<p>语法: zip 选项[-r] [压缩后文件名] [文件或目录]</p>
+<p>-r 压缩目录</p>
+<p>压缩后文件格式: .zip</p>
+<hr>
+<p>unzip: 解压.zip的压缩文件</p>
+<p>所在路径: /usr/bin/unzip</p>
+<p>语法: unzip [压缩文件]</p>
+<hr>
+<p>bzip2 : 压缩文件</p>
+<p>所在路径 : /usr/bin/bzip2</p>
+<p>语法: bzip2 选项[-k] [文件]</p>
+<p>-k 产生压缩文件后保留原文件</p>
+<p>压缩后格式 .bz2</p>
+<p>如果是压缩目录可以用 tar -c<strong>j</strong>f(z换成j)</p>
+<hr>
+<p>bunzip2: 解压缩</p>
+<p>所在路径: /usr/bin/bunzip2</p>
+<p>语法: bunzip2 选项 [-k] [压缩文件] </p>
+<p>-k 解压缩后保留原文件</p>
+<p>解压.tar.bz2 也可以用tar 的解压命令,不过把前文中的-z换成-j</p>
+<h2 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h2><p>write : 给用户发信息,以Ctrl+D保存结束</p>
+<p>所在路径 /usr/bin/write</p>
+<p>语法: write&lt;用户名&gt;</p>
+<p>进入以后输错删错了需按Ctrl + Backsapce(退格键) 或者delete</p>
+<p>用户不在线发不出去</p>
+<hr>
+<p>wall : 发广播信息(write all)</p>
+<p>所在路径/usr/bin/wall</p>
+<p>语法: wall [message]</p>
+<hr>
+<p>ping: 测试网络连通性</p>
+<p>所在路径/bin/ping</p>
+<p>语法: ping 选项 IP地址</p>
+<p>-c 指定发送次数</p>
+<p>如果无-c选项,会一直ping除非按ctrl+C</p>
+<hr>
+<p>ifconfig : 查看和设置网卡信息(<strong>注意这里针对的是centos6,对于更高版本的请根据版本决定</strong>)</p>
+<p>所在路径 /sbin/ifconfig</p>
+<p>语法: ifconfig 网卡名称 IP地址 (查看无需跟任何东西)</p>
+<p>eth0 : 本地真实网卡有其他网卡则是eth1</p>
+<p>lo: 回访网卡,本机通信于测试</p>
+<p>注: 用这种方法设置ip,重启会自动断掉</p>
+<hr>
+<p>mail : 查看发送电子邮件  针对centos6</p>
+<p>所在路径 /bin/mail</p>
+<p>语法: mail[用户名]</p>
+<p>mail 不跟任何内容可以显示邮箱(弹出的界面开头的n表示new,未读 )</p>
+<p>邮件保存在/var/spool/mail/root</p>
+<p>进入自己的邮箱后,查看内容输入序列号即可</p>
+<p>h: 显示当前邮箱文件</p>
+<p>d [序列号]: 删除邮件</p>
+<p>q : 退出</p>
+<p>(用户不在线也能成功发送)</p>
+<hr>
+<p>last : 列出目前于过去登入系统的用户信息</p>
+<p>所在路径: /usr/bin/last</p>
+<p>语法: last</p>
+<hr>
+<p>lastlog: 列出所有用户(包括未登录过的),然后显示登录状态</p>
+<p>所在路径 :usr/bin/lastlog</p>
+<p>语法: lastlog</p>
+<hr>
+<p>tarceroute: 显示数据包到主机间的路径</p>
+<p>所在路径: /bin/tarceroute</p>
+<p>语法: traceroute 主机域名</p>
+<hr>
+<p>netstat: 显示网络相关信息</p>
+<p>所在路径: /bin/netstat</p>
+<p>语法: netstat [选项]</p>
+<p>-t : TCP协议</p>
+<p>-u : UDP协议</p>
+<p>-l : 监听</p>
+<p>-r : 路由</p>
+<p>-n : 显示IP地址和端口号</p>
+<p>netstat -tlum : 查看本机监听的端口</p>
+<p>netstat -an 查看本机所有网络连接</p>
+<p>netstat -rn 查看本机路由表</p>
+<hr>
+<p>setup : 配置网络</p>
+<p>所在路径: /usr/bin/setup</p>
+<p>语法: settup</p>
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/5.png" class>
+
+<p>配ip进入网络配置</p>
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/6.png" class>
+
+<p>进入设备配置</p>
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/7.png" class>
+
+<img src="/frosty.github.io/2020/02/27/%E5%88%9D%E6%8E%A2Linux/8.png" class>
+
+<p>自己配置需要像PHCP中的星号去掉</p>
+<hr>
+<p>mount : 挂载命令</p>
+<p>所在路径 /bin/mount</p>
+<p>语法: mount [-t 文件系统] 设备文件名 挂载点</p>
+<p>取消挂载直接在mount前加u即可,后面挂载点,光驱都行</p>
+<p>一般是 mount /dev/sr0 挂载点(自己的一个目录)</p>
+<h2 id="关机重启命令"><a href="#关机重启命令" class="headerlink" title="关机重启命令"></a>关机重启命令</h2><p>shutdown: 关机</p>
+<p>语法 : shutdown [选项] 时间</p>
+<p>-c: 取消前一个关机命令</p>
+<p>-h: 关机</p>
+<p>-r: 重启</p>
+<p>shutdown -j 20:30 (20:30关机,now就是现在关机)</p>
+<hr>
+<p>其他关机命令:</p>
+<p>halt</p>
+<p>poweroff</p>
+<p>init 0</p>
+<hr>
+<p>其他重启命令</p>
+<p>reboot</p>
+<p>init 6</p>
+<hr>
+<p>系统运行级别</p>
+<p>0 : 关机</p>
+<p>1 : 单用户 : 只启动最核心的程序(类似windows的安全模式)</p>
+<p>2: 不完全多用户,不含NFS服务 (NFS是传文件的一个简单服务)</p>
+<p>3: 完全多用户</p>
+<p>4: 未分配</p>
+<p>5: 图形界面</p>
+<p>6: 重启</p>
+<p>1，2，3都没有图形界面</p>
+<p>cat /etc/inittab (init的配置文件)  :修改系统默认运行级别</p>
+<p>runlevel :查询系统运行级别</p>
+<hr>
+<p>logout: 退出登录命令</p>
+<h1 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h1><h2 id="VIM常用操作-centos-6"><a href="#VIM常用操作-centos-6" class="headerlink" title="VIM常用操作(centos 6)"></a>VIM常用操作(centos 6)</h2><p>vi filename:进入命令模式</p>
+<p>:wq :退出vim</p>
+<p>i a o:命令模式➡插入模式     退出:ESC</p>
+<p>:(输入冒号) ：进入编辑模式</p>
+<hr>
+<p>插入命令:</p>
+<p>a : 在光标虽在字符后插入</p>
+<p>A: 在光标所在行尾插入</p>
+<p>i: …..字符前(省略处于a,A相同)</p>
+<p>I: 所在行首</p>
+<p>o: 光标下插入新行</p>
+<p>O: 在光标上插入新行</p>
+<hr>
+<p>定位命令:</p>
+<p>:srt nu :设置行号</p>
+<p>:set nu :取消行号</p>
+<p>gg: 到第一行</p>
+<p>G:到最后一行</p>
+<p>nG:到第n行 (先退到命令模式)</p>
+<p>:n 到第n行</p>
+<p>$:移至行尾</p>
+<p>0:移至行首</p>
+<hr>
+<p>删除命令</p>
+<p>x : 删除光标所在处字符</p>
+<p>nx :删除光标后n个字符</p>
+<p>dd : 删除光标所在行</p>
+<p>dG: 删除光标所在行到文件末尾的内容</p>
+<p>D : 删除光标所在处到行尾的内容</p>
+<p>:n1,n2d : 删除指定范围的行</p>
+<hr>
+<p>复制剪切命令</p>
+<p>yy :复制当前行</p>
+<p>nyy : 复制当前一下n行</p>
+<p>dd : 剪切当前行</p>
+<p>ndd : 前街当前行一下n行</p>
+<p>p、P : 粘贴在当前光标所在行下或行上</p>
+<hr>
+<p>替换和取消命令</p>
+<p>r : 取代光标所在处字符</p>
+<p>R : 从光标所在处开始替换字符,按ESC结束</p>
+<p>u:取消上一步操作</p>
+<hr>
+<p>搜索和搜索替换命令</p>
+<p>/string : 搜索指定字符串, 搜索时忽略大小写: set ic</p>
+<p>n : 搜索指定字符串的下一个出现位置 (前一个用b)</p>
+<p>:%s /old_string /new_string /g :全文替换指定字符串, /g不询问确认, /c会讯问确认</p>
+<p>:n1,n2s /old /new /g : 指定行替换</p>
+<hr>
+<p>保存和退出命令</p>
+<p>:w 保存修改</p>
+<p>: w new_filename 另存为指定文件</p>
+<p>:wq 保存修改并退出</p>
+<p>ZZ :快捷键,保存修改并退出</p>
+<p>:q! 不保存修改退出</p>
+<p>:wq! 保存修改并退出(文件所有者及root可使用) , (当写权限被取消时,用此命令强行保存)</p>
+<h2 id="操作技巧"><a href="#操作技巧" class="headerlink" title="操作技巧"></a>操作技巧</h2><p>:r 文件名 导入当前文件中(到光标处)</p>
+<p>:!操作命令 : 可以在不退出vim实现操作</p>
+<p>:r !操作命令 将操作命令的结果导入vim中</p>
+<p>:map 快捷键 触发命令</p>
+<p>如 :map ^P I#&lt;ESC&gt; (注:^P可以通过ctrl+V+P一起按 或者先按ctrl +v 再按ctrl+p )</p>
+<p>后面键入ctrl + p 就可以自动调用了</p>
+<p>:ab 内容1 内容2 : 该定义可以使,在任何地方输入内容1按回车会让他变成内容2</p>
+<p>注:上面内容重启后会消失,若要保存进入到对应的宿主目录中键入即可 如root : /root/.vimrc, 其他人就是/home/username/.vimrc</p>
+<h1 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h1><h2 id="RPM包管理-rpm命令管理"><a href="#RPM包管理-rpm命令管理" class="headerlink" title="RPM包管理-rpm命令管理"></a>RPM包管理-rpm命令管理</h2><h3 id="RPM包命名规则"><a href="#RPM包命名规则" class="headerlink" title="RPM包命名规则"></a>RPM包命名规则</h3><p>安装包一般都在光盘中</p>
+<p>httpd-2.2.15-15.e16.centos.1.i686.rpm</p>
+<p>httpd:软件包名</p>
+<p>2.2.15:软件版本</p>
+<p>15 : 软件发布次数</p>
+<p>e16.centos 适合Linux平台</p>
+<p>i686 : 适合的硬件平台</p>
+<p>rmp: rpm包扩展名</p>
+<h3 id="rpm包依赖性"><a href="#rpm包依赖性" class="headerlink" title="rpm包依赖性"></a>rpm包依赖性</h3><p>rpm包具有依赖性</p>
+<p>比如装一个a必须要装一个b,装一个b需要装一个c</p>
+<p>依赖模块(一般是so结尾,且模块在库文件中),去<a href="http://www.rpmfind.net搜索该模块在哪个库文件" target="_blank" rel="noopener">www.rpmfind.net搜索该模块在哪个库文件</a></p>
+<h3 id="安装升级与卸载"><a href="#安装升级与卸载" class="headerlink" title="安装升级与卸载"></a>安装升级与卸载</h3><p>包全名: 操作的包是没有安装的软件包时,使用包全名。而且要注意路径</p>
+<p>包名:操作已经安装的软件包时,使用包命。是搜索/var/lib/rpm/中的数据库</p>
+<hr>
+<p>rpm安装</p>
+<p>rpm -ivh 包全名 (一般-ivh全都写)</p>
+<p>选项:</p>
+<p>-i(install) 安装</p>
+<p>-v(verbose) 显示详细信息</p>
+<p>-h(hash)  显示进度</p>
+<p>–nodeps 不检测依赖性 (一般不会加这条命令)</p>
+<hr>
+<p>rpm包升级</p>
+<p>rpm -Uvh 包全名</p>
+<p>-U (upgrade)升级</p>
+<hr>
+<p>rmp包卸载</p>
+<p>rpm -e 包名(可以不写包全名)</p>
+<p>选项:</p>
+<p>-e(erase) 卸载</p>
+<p>–nodeps 不检查依赖性</p>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><p>查询是否安装</p>
+<p>rpm -q 包命</p>
+<p>-q (query) : 查询</p>
+<p>rpm -qa </p>
+<p>-a(all) : 所有 </p>
+<hr>
+<p>查询软件包详细信息</p>
+<p>rpm -qi 包名</p>
+<p>-i :查询软件信息(information)</p>
+<p>-p :查询未安装包信息(package) (因为未安装,所以查询时输入包全名)</p>
+<hr>
+<p>查询包中文件安装位置</p>
+<p>rpm -ql 包命</p>
+<p>-l(list) 列表</p>
+<p>-p(package):查询未安装包信息</p>
+<hr>
+<p>查询系统文件属性哪个rpm包</p>
+<p>rpm -qf 系统文件名</p>
+<p>-f(file) 查询系统文件属于哪个软件包</p>
+<hr>
+<p>rpm -qR 包名</p>
+<p>-R 查询软件包的依赖性 (requires)</p>
+<p>-p 查询未安装包信息(package)</p>
+<hr>
+<p>rpm包校验</p>
+<p>rpm -V 已安装的包名</p>
+<p>-V(verify) 校验指定RPM包中的文件</p>
+<p>验证信息</p>
+<p>S 文件大小是否改变</p>
+<p>M 文件的类型或文件的权限(rwx)是否改变</p>
+<p>5 文件MD5校验和是否改变(可以看成文件内容是否改变)</p>
+<p>D 设备中,从代码是否改变</p>
+<p>L 文件路径是否改变</p>
+<p>U 文件的属主(所有者)是否改变</p>
+<p>G 文件的属组是否改变</p>
+<p>T 文件的修改时间是否改变</p>
+<p>文件类型</p>
+<p>c :配置文件 </p>
+<p>d: 普通文档</p>
+<p>g: “鬼”文件,很少见,就是该文件不应该被这个RPM包包含</p>
+<p>l : 授权文件</p>
+<p>r: 描述文件</p>
+<p>rpm包中文件提取</p>
+<p>rpm2cpio 包全名 | \</p>
+<p>cpio -idv .文件绝对路径 (点代表从指定文件路径提取到当前文件路径)</p>
+<p>(rpm2cpio: 将rpm包转换为cpio格式的命令)</p>
+<p>(cpio 一个标准工具,它用于创建软件档案文件和从档案文件中提取文件)</p>
+<p>cpio 选项 &lt;[文件|设备]</p>
+<p>-i : copy-in 模式,还原</p>
+<p>-d : 还原时自动新建目录</p>
+<p>-v : 显示还原过程</p>
+<h2 id="RPM包管理-yum在线管理"><a href="#RPM包管理-yum在线管理" class="headerlink" title="RPM包管理-yum在线管理"></a>RPM包管理-yum在线管理</h2><p>yum能解决依赖性问题,yum安装服务器会自动解决依赖性问题</p>
+<h3 id="IP地址配置和网络yum源"><a href="#IP地址配置和网络yum源" class="headerlink" title="IP地址配置和网络yum源"></a>IP地址配置和网络yum源</h3><h4 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/frosty.github.io/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/frosty.github.io/2019/12/24/HTML-CSS-JS/" rel="next" title="HTML+CSS+JS 学习">
+                <i class="fa fa-chevron-left"></i> HTML+CSS+JS 学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/frosty.github.io/2020/03/12/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8B%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="prev" title="虚拟机下安装Linux操作系统">
+                虚拟机下安装Linux操作系统 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">frosty</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/frosty.github.io/archives">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/frosty.github.io/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/frosty.github.io/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用命令"><span class="nav-number">1.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件处理命令"><span class="nav-number">1.1.</span> <span class="nav-text">文件处理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令格式与目录处理命令ls"><span class="nav-number">1.1.1.</span> <span class="nav-text">命令格式与目录处理命令ls</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命令格式"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">命令格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ls"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">ls</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理命令"><span class="nav-number">1.1.2.</span> <span class="nav-text">处理命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限管理"><span class="nav-number">1.2.</span> <span class="nav-text">权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#权限管理命令chmod"><span class="nav-number">1.2.1.</span> <span class="nav-text">权限管理命令chmod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他权限管理命令"><span class="nav-number">1.2.2.</span> <span class="nav-text">其他权限管理命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件搜索命令"><span class="nav-number">1.3.</span> <span class="nav-text">文件搜索命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件搜索命令find"><span class="nav-number">1.3.1.</span> <span class="nav-text">文件搜索命令find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他搜索命令"><span class="nav-number">1.3.2.</span> <span class="nav-text">其他搜索命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帮助命令"><span class="nav-number">1.4.</span> <span class="nav-text">帮助命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户管理命令"><span class="nav-number">1.5.</span> <span class="nav-text">用户管理命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压缩解压"><span class="nav-number">1.6.</span> <span class="nav-text">压缩解压</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux压缩格式"><span class="nav-number">1.6.1.</span> <span class="nav-text">Linux压缩格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">1.6.2.</span> <span class="nav-text">命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络命令"><span class="nav-number">1.7.</span> <span class="nav-text">网络命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关机重启命令"><span class="nav-number">1.8.</span> <span class="nav-text">关机重启命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VIM"><span class="nav-number">2.</span> <span class="nav-text">VIM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VIM常用操作-centos-6"><span class="nav-number">2.1.</span> <span class="nav-text">VIM常用操作(centos 6)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作技巧"><span class="nav-number">2.2.</span> <span class="nav-text">操作技巧</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件包管理"><span class="nav-number">3.</span> <span class="nav-text">软件包管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RPM包管理-rpm命令管理"><span class="nav-number">3.1.</span> <span class="nav-text">RPM包管理-rpm命令管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RPM包命名规则"><span class="nav-number">3.1.1.</span> <span class="nav-text">RPM包命名规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rpm包依赖性"><span class="nav-number">3.1.2.</span> <span class="nav-text">rpm包依赖性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装升级与卸载"><span class="nav-number">3.1.3.</span> <span class="nav-text">安装升级与卸载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询"><span class="nav-number">3.1.4.</span> <span class="nav-text">查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RPM包管理-yum在线管理"><span class="nav-number">3.2.</span> <span class="nav-text">RPM包管理-yum在线管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IP地址配置和网络yum源"><span class="nav-number">3.2.1.</span> <span class="nav-text">IP地址配置和网络yum源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网络配置"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">网络配置</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">frosty</span>
+
+  
+</div>
+
+
+
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/frosty.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/frosty.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/frosty.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/frosty.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/frosty.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/frosty.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/frosty.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/frosty.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
