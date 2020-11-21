@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/frosty-wind.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/frosty-wind.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/frosty-wind.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/frosty-wind.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/frosty-wind.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/frosty-wind.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/frosty-wind.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="blog," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="##                                         搭博客的起因​    经过一段时间学习，逐渐适应了 计算机 软工的学习，在网络上看了各种大佬的博客，心血来潮自己也想整个博客来 玩 记录自己的学习，想起以前一位学长也曾建议过写自己的博客  ，于是乎我就用了将近10个小时的时间终于弄好了（主要还是因为自己太菜了，所以用了这么多时间）。 如何搭建既然有了想法那么就要">
+<meta name="keywords" content="blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建博客的坎坷道路">
+<meta property="og:url" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;year&#x2F;11&#x2F;24&#x2F;%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9D%8E%E5%9D%B7%E9%81%93%E8%B7%AF&#x2F;index.html">
+<meta property="og:site_name" content="frosty的博客">
+<meta property="og:description" content="##                                         搭博客的起因​    经过一段时间学习，逐渐适应了 计算机 软工的学习，在网络上看了各种大佬的博客，心血来潮自己也想整个博客来 玩 记录自己的学习，想起以前一位学长也曾建议过写自己的博客  ，于是乎我就用了将近10个小时的时间终于弄好了（主要还是因为自己太菜了，所以用了这么多时间）。 如何搭建既然有了想法那么就要">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty-wind.github.io&#x2F;year&#x2F;11&#x2F;24&#x2F;%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9D%8E%E5%9D%B7%E9%81%93%E8%B7%AF&#x2F;2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty-wind.github.io&#x2F;year&#x2F;11&#x2F;24&#x2F;%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9D%8E%E5%9D%B7%E9%81%93%E8%B7%AF&#x2F;1.png">
+<meta property="og:updated_time" content="2019-11-25T05:27:35.099Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty-wind.github.io&#x2F;year&#x2F;11&#x2F;24&#x2F;%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9D%8E%E5%9D%B7%E9%81%93%E8%B7%AF&#x2F;2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/frosty-wind.github.io/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://frosty-wind.github.io/year/11/24/搭建博客的坎坷道路/"/>
+
+
+
+
+
+  <title>搭建博客的坎坷道路 | frosty的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/frosty-wind.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">frosty的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/frosty-wind.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/frosty-wind.github.io/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/frosty-wind.github.io/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/frosty-wind.github.io/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/frosty-wind.github.io/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty-wind.github.io/year/11/24/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9D%8E%E5%9D%B7%E9%81%93%E8%B7%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="frosty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/frosty-wind.github.io/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="frosty的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">搭建博客的坎坷道路</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-24T20:02:03+08:00">
+                2019-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/frosty-wind.github.io/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index">
+                    <span itemprop="name">搭建博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <pre><code>##                                         搭博客的起因</code></pre><p>​    经过一段时间学习，逐渐适应了 <del>计算机</del> 软工的学习，在网络上看了各种大佬的博客，心血来潮自己也想整个博客来 <del>玩</del> 记录自己的学习，想起以前一位学长也曾建议过写自己的博客  ，于是乎我就用了将近10个小时的时间终于弄好了（主要还是因为自己太菜了，所以用了这么多时间）。</p>
+<h2 id="如何搭建"><a href="#如何搭建" class="headerlink" title="如何搭建"></a>如何搭建</h2><pre><code>既然有了想法那么就要付出实践了</code></pre><ol>
+<li><p>选择你想要的搭建方式</p>
+<p>搭建博客主要分为两种，一种是自己搭建站点，另一种则是在直接在博客平台注册一个账号</p>
+</li>
+</ol>
+<ul>
+<li><p>自己搭建站点</p>
+<p>  如果是自己搭建站点呢，可以选择自己买个域名，然后买虚拟主机，然后再使用<strong>wordpress</strong>当然也可以选择其他的搭建自己博客（如果是国内的主机可能还需要备案），这样搭建的话花钱是必不可少的；也可以选择<u> github + hexo</u>来搭建站点，这种就是免费的。</p>
+</li>
+<li><p>直接在博客平台上注册一个账号</p>
+<p>   这种方法就 <del>相对</del> 方便了，直接找个博客平台按照流程注册就行了，至于选择哪一个平台就看个人喜好了，比如说CSDN（广告有点多），博客园，掘金，简书等等。</p>
+<p> 秉承着多学习东西的想法，我选择了自己搭建站点中的github + hexo，主题选择了比较精简的next主题 ，没有选择搭建自己的网站是因为搭建自己的网站比较费钱（能省就省），这样顺便还能学习一下github的使用，就这样开始了搭建博客之旅</p>
+</li>
+</ul>
+<ol start="2">
+<li><p>搭建方法</p>
+<p> 在谷歌上搜索GitHub + hexo可以搜索一大堆教程，我选择了其中的一篇，附上<strong><a href="https://zhuanlan.zhihu.com/p/35668237" target="_blank" rel="noopener">传送门</a></strong>。按照上面的教程走就行了，也许有人看了以后会问我为什么用了将近10个小时，主要是因为实际搭建的过程中有很多坑上面并没有介绍，而我只能通过谷歌来搜索解决方案，所以我接下来主要介绍一下我踩的坑。(除了坑以外，还有一些文章上没介绍的关于主题的布置问题，比如tag，categories的设置，title的设置，去掉hexo强力驱动的页脚等等等，这些建议自行谷歌，当然对于那些不看教程也能自己设置的大佬例外)</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>踩坑的惨痛经历</p>
+<p>(1) 这个可能只有我这种笨蛋才会犯，当时找了好久自己的博客url。最后才知道就是github pages下面附带的那个网址 </p>
+<p>(2)当在git使用代码 <code>hexo s</code>后发现再输入命令没有反应了，发现居然要在git按下<code>ctrl + c</code>退出本地服务器才能继续执行git命令</p>
+<p>(3)进不去<a href="localhost:4000/" target="_blank" rel="noopener">localhost:4000/</a>在谷歌上搜了下说是端口占用的原因，然后需要更改端口，最后我才发现，要进入需要在git中执行了<code>hexo s</code>才行，当然在我按下<code>ctrl + c</code>(退出本地服务器)后无法进入。</p>
+<p>(4)配置SSH的时候因为以前老师为了让我们克隆他的课件，就让我们配置过，不过是使用他传给我们的他的SSH密钥，所以无法在.ssh文件夹中申请自己的密钥，当然配置的时候也就失败了，所以我删除了他的密钥再进行配置。</p>
+<p>​       除此之外，我在生成密钥的时候还报错了…….can’t established.主要是因为在.ssh文件夹中少了known_hosts文件，在后面的输入中输入y他就可以自行创建了</p>
+<img src="/frosty-wind.github.io/year/11/24/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9D%8E%E5%9D%B7%E9%81%93%E8%B7%AF/2.png" class>
+
+<p>(5)（<strong>这个是我耽误时间最多的一样</strong>）在本地服务器上检查自己的网页是正常的，但是在github上即给别人看的网页中你的所有框架都消失了最后是一片白板  </p>
+<img src="/frosty-wind.github.io/year/11/24/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%9D%8E%E5%9D%B7%E9%81%93%E8%B7%AF/1.png" class>
+
+<p>这里你需要更改一下_config.yml文件中的url和root属性rul改为你blog的网址，root改为你的项目名(相对路径)。  </p>
+<p>(PS)其实这个坑还是很简单，谷歌一搜就有，但是有点需要注意这也是为什么我耽误了这么久的原因，当你<code>hexo d</code>上传到你的github后，需要等待一段时间打开自己的博客界面才能恢复正常，我当时就是很傻的上传后直接打开，发现没有任何效果，就疯狂重弄，甚至重新安装我的hexo，现在想想自己真的蠢。  </p>
+<p> (6)  目前还没解决的一个大坑，图片无法显示，在typora中正常显示，但是在网页上无法显示，我花了1个多小时在网上寻求方法，但是用了他们提供的方法依旧解决不了，后面有空再研究研究吧    ===================================================================  </p>
+<p> 手动分割，终于找到了图片无法显示的解决方案，原来是新版本Hexo3不再支持以前的路径方案，所以需采用新的方法(我之前翻的博客都是hexo3.0版本一下)，附上解决方案的<strong><a href="https://blog.csdn.net/weixin_30734435/article/details/98497054" target="_blank" rel="noopener">传送门</a></strong>,同时学到了以后找解决方案可以先去看看官方文档  </p>
+<p>(7)  当然还有很多很多很小的坑我就不详细写了，或则有一些我忘了的。总之，不会的，不知道的去谷歌，你遇到的问题绝大部分人也会遇到，很多人会在自己的博客上写，对于那些自己解决问题，比如自己查阅官方文档的，或者自己发现解决问题的方法的大佬(我在一篇博客里看到有个大佬自己查看http报文发现问题然后解决问题)我是真心佩服。</p>
+</li>
+</ol>
+<p>​    </p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&emsp;&emsp;搭建博客用了我整整一天的时间，我是从早上8点半(应该是)开始，一直弄到了晚上8点，除去中间吃饭和参加四级口语考试时间应该有将近10个小时(我没有睡午觉)，真的累到爆了。但其实还有很多东西没弄，我本来想加个评论功能的，在众多插件里面最好用的最方便的是valine，但是我实名认证没有成功，支付宝扫脸时说模糊，而且还不能扫第二次，我吐了，其他的评论插件要么是加载太慢，或者弄起来比较复杂，需要增加文件中的配置，我怕我到时候弄了，又会导致博客出错无法显示又得花时间重新弄(消耗不起这个精力了。</p>
+<p>&emsp;&emsp;还有很多东西没弄，比如设置一个动态背景，增加点击特效，或者显示浏览量，加入一个头像。其实还是非常想弄的，但是太累了(一整天确实很累,留个坑以后有时间再弄)，而且很怕到时候哪一步出错导致自己的博客页面无法显示(我中途其实尝试过增加一个动态背景特效，但是没成功，还导致界面没打开，最后把哪些东西删掉，才弄好的，不知道是不是又是因为需要上传后等待一段时间才能恢复正常)，等我以后知识储备更丰富了，英语更优秀了，<del>更能折腾了</del>再来弄一下吧，毕竟现在自己在计算机这一个领域里面了解的太少太少了，很多东西都只能看别人的博客来做(比如这个博客就是看别人的教程来做的)，而且做了以后很多东西还不知道原理，为什么这么做就可以了，比如是如何将本地与github连接在一起的，为什么在配置中删几个#就能用了，那里面并没有源码，很多东西还有疑问，计算机这条路很长，但因为热爱就不会觉得无聊。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/frosty-wind.github.io/tags/blog/" rel="tag"># blog</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/frosty-wind.github.io/year/11/26/burpsuite%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" rel="prev" title="burpsuite的学习之路">
+                burpsuite的学习之路 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">frosty</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/frosty-wind.github.io/archives">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/frosty-wind.github.io/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/frosty-wind.github.io/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何搭建"><span class="nav-number">1.</span> <span class="nav-text">如何搭建</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">frosty</span>
+
+  
+</div>
+
+
+
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/frosty-wind.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty-wind.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty-wind.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty-wind.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty-wind.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/frosty-wind.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/frosty-wind.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/frosty-wind.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/frosty-wind.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/frosty-wind.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/frosty-wind.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/frosty-wind.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/frosty-wind.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
