@@ -83,13 +83,13 @@
 <meta name="keywords" content="脚本,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python学习">
-<meta property="og:url" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2019&#x2F;11&#x2F;26&#x2F;python%E5%AD%A6%E4%B9%A0&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;2019&#x2F;11&#x2F;26&#x2F;python%E5%AD%A6%E4%B9%A0&#x2F;index.html">
 <meta property="og:site_name" content="frosty的博客">
 <meta property="og:description" content="学习教材0基础入门学习python(后面标题分类为书中章节) 变量、分支、循环、条件、函数等常规内容3.1print() : 输出 input():用户输入,同时括号内的内容为提示用户的内容 3.2python可对字符串进行拼接 1234a = &quot;3&quot;b = &quot;5&quot;c = a + b print(c) # 输出35  3.3在字符串前加一个r,代表原始字符串,即字符串中若出现转义(如\n)会默认为">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2019&#x2F;11&#x2F;26&#x2F;python%E5%AD%A6%E4%B9%A0&#x2F;1.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2019&#x2F;11&#x2F;26&#x2F;python%E5%AD%A6%E4%B9%A0&#x2F;2.png">
-<meta property="og:updated_time" content="2020-03-18T10:30:01.560Z">
+<meta property="og:updated_time" content="2020-04-15T16:13:03.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2019&#x2F;11&#x2F;26&#x2F;python%E5%AD%A6%E4%B9%A0&#x2F;1.png">
 
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="https://frosty-wind.github.io/frosty.github.io/2019/11/26/python学习/"/>
+  <link rel="canonical" href="https://frosty-wind.github.io/2019/11/26/python学习/"/>
 
 
 
@@ -264,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty.github.io/frosty.github.io/2019/11/26/python%E5%AD%A6%E4%B9%A0/">
+    <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty.github.io/2019/11/26/python%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="frosty">
@@ -546,14 +546,106 @@
 <p>方法</p>
 <p>add():添加元素</p>
 <p>remove():删除集合中已知的元素</p>
-<h2 id="open打开文件出现的编码问题"><a href="#open打开文件出现的编码问题" class="headerlink" title="open打开文件出现的编码问题"></a>open打开文件出现的编码问题</h2><p>&emsp;&emsp;最近在使用open函数打开文件时输出时弹出以下错误信息</p>
+<h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><h2 id="8-1"><a href="#8-1" class="headerlink" title="8.1"></a>8.1</h2><p>open(): 打开文件,该函数有多个参数,使用时搜索即可</p>
+<p>&emsp;&emsp;最近在使用open函数打开文件时输出时弹出以下错误信息</p>
 <img src="/frosty.github.io/2019/11/26/python%E5%AD%A6%E4%B9%A0/1.png" class>
 
 <p>&emsp;&emsp;经谷歌搜索后发现是编码问题，采用了jbk编码无法识别，所以我们将编码设置为<strong>UTF-8</strong>即可</p>
 <img src="/frosty.github.io/2019/11/26/python%E5%AD%A6%E4%B9%A0/2.png" class>
 
-
-
+<hr>
+<p>close()方法用于关闭文件</p>
+<hr>
+<p>read():读取文件,如果不设置参数,那么会全部读取出来,文件指针指向文件末尾</p>
+<p>tell() : 告诉你当前文件指针的位置</p>
+<p>seek(offset,from):从from(0,起始位置,1当前位置,2文件末尾) 偏移offset字节</p>
+<p>readline():在文件中读取一整行</p>
+<p>写入文件用方法write</p>
+<h2 id="8-2"><a href="#8-2" class="headerlink" title="8.2"></a>8.2</h2><p>OS模块</p>
+<p>使用模块前先用import导入</p>
+<p>方法</p>
+<p>getcwd():返回当前工作目录</p>
+<p>chdir(path) : 改变工作目录</p>
+<p>listdir(path=’.’) :列举指定目录中的文件名</p>
+<p>mkdir(path) : 创建单层目录,如该目录已存在抛出异常</p>
+<p>makedirs(path)” 递归创建多层目录,如该目录已存在抛出异常</p>
+<p>remove(path):删除单层目录,如该目录非空抛出异常</p>
+<p>rename(old,new):将文件old重命名为new</p>
+<p>system(commond):运行系统的shell命令</p>
+<p>os.curdir :指代当前目录(‘.’)</p>
+<p>os.pardir : 指代上一级目录</p>
+<p>os.sep : 输出操作系统特定路径分隔符</p>
+<p>os.linesep : 当前平台使用的行终止符</p>
+<p>os.name : 指定当前使用的操作系统</p>
+<hr>
+<p>os.path 模块</p>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><h2 id="9-2"><a href="#9-2" class="headerlink" title="9.2"></a>9.2</h2><p>try-except语句</p>
+<p>try: </p>
+<p>检测范围</p>
+<p>except Exception [as reason]:</p>
+<p>出现异常(Exception)后的代码</p>
+<h1 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h1><h2 id="11"><a href="#11" class="headerlink" title="11"></a>11</h2><p>类名约定以大写字母开头</p>
+<p>class 类名:     (定义类)</p>
+<p>实例化对面名 = 类名()                         // 对象实例化</p>
+<p>对象名.方法  : 调用方法</p>
+<hr>
+<p>定义方法的时候self是必须参数,代表对象本身,可以用slef.属性来赋值,调用等</p>
+<hr>
+<p>魔法方法: _<em>方法名_</em></p>
+<p>_<em>init_</em> :  在实例化对象时,自动调用改方法,若init又参数 ,可以实例化对象时对参数赋值</p>
+<hr>
+<p>python中定义私有变量只需在变量名或函数名前加上”__”</p>
+<p>对象._类名__变量名 可访问两个下划线开头的私有变量</p>
+<hr>
+<p>类继承: class 类名 (被继承的类)k</p>
+<p>子类中定义与父类同名的方法或属性,会自动覆盖父类对应的方法或属性</p>
+<hr>
+<p>super函数可以自动找到基类的方法,传入self参数</p>
+<p>可以用于定义子类时因为定义相同的方法而使父类方法被覆盖</p>
+<hr>
+<p>多重继承</p>
+<p>class 类名 (父类1，父类2，父类3)</p>
+<hr>
+<p>属性是静态变量,对对象赋值相当于覆盖属性,如果直接对类的属性改变,那么未对对象属性赋值,属性也会相应改变</p>
+<hr>
+<p>__init__方法返回值一定是None</p>
+<hr>
+<p>_<em>new_</em>(cls[,…])才是在第一个对象实例化时调用的第一个方法</p>
+<p>与其他魔术方法不同.它第一个参数是类cls,其他参数会传给init</p>
+<p>这个类需要返回一个实例化对象</p>
+<hr>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><h2 id="13"><a href="#13" class="headerlink" title="13"></a>13</h2><p>为了让IDLE能找到模块需要放到默认的python安装路径下</p>
+<p>模块就是程序</p>
+<p>import 文件名(不加后缀)</p>
+<hr>
+<p>在调用时不能直接调用,而是</p>
+<p>模块名.函数名</p>
+<hr>
+<p>注！！！: 文件名不能用全数字</p>
+<h3 id="模块命名方式"><a href="#模块命名方式" class="headerlink" title="模块命名方式"></a>模块命名方式</h3><p>1 import 模块名</p>
+<p>2 from 模块名 import 函数名</p>
+<p>3 import 模块名 as 新名字</p>
+<h3 id="name-属性"><a href="#name-属性" class="headerlink" title="__name__属性"></a>__name__属性</h3><p>__name__属性的值与程序状态有关</p>
+<p>如果程序直接运行__name__=main,如果程序作为模块导入__name__=模块的名字</p>
+<h3 id="搜索路径"><a href="#搜索路径" class="headerlink" title="搜索路径"></a>搜索路径</h3><p>import sys </p>
+<p>sys.path : 他包含的为python导入模块的搜索路径</p>
+<p>若要指定某个文件夹而又在sys.path中,则sys.path.append(‘路径’) 即可</p>
+<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><p>创建包的具体操作</p>
+<p>1 创建一个文件夹用于存放相关模块文件夹即为包的名字</p>
+<p>2 在文件夹中创建一个_<em>init__.py的模块文件,内容可以为空(必须在每个包目录下建立一个__init_\</em>.py模块,可以是一个空文件,也可以是写一些初始化代码,这是python的规定,用来告诉python将该目录当场一个包处理)</p>
+<p>3 将相关的模块放入文件夹中</p>
+<p>在程序中导入包的模块: import 包名.模块名</p>
+<h1 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h1><h2 id="14"><a href="#14" class="headerlink" title="14"></a>14</h2><p>第一个问题访问互联网</p>
+<p>模块: urllib (rul library库)</p>
+<p>urllib是一个包</p>
+<p>urllib.request.rulopen()函数可以访问网页 (得到是2进制数据,转码就将得到的数据用decode方法,如 变量名.decode(“utf-8”))</p>
+<hr>
+<p>requests库</p>
+<p>安装直接pip install requests,</p>
+<p>requests是个开源项目,可以直接在github上获取</p>
+<p>使用时查取操作手册即可</p>
+<p>BeautifulSoup4:网页解析器</p>
+<p>安装直接pip install bs4</p>
 
       
     </div>
@@ -675,7 +767,7 @@
               
                 <a href="/frosty.github.io/archives">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -686,7 +778,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/frosty.github.io/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -697,7 +789,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/frosty.github.io/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -730,7 +822,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#变量、分支、循环、条件、函数等常规内容"><span class="nav-number">1.</span> <span class="nav-text">变量、分支、循环、条件、函数等常规内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1"><span class="nav-number">1.1.</span> <span class="nav-text">3.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2"><span class="nav-number">1.2.</span> <span class="nav-text">3.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3"><span class="nav-number">1.3.</span> <span class="nav-text">3.3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4"><span class="nav-number">1.4.</span> <span class="nav-text">3.4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6"><span class="nav-number">1.5.</span> <span class="nav-text">3.6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7"><span class="nav-number">1.6.</span> <span class="nav-text">3.7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8"><span class="nav-number">1.7.</span> <span class="nav-text">3.8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-9"><span class="nav-number">1.8.</span> <span class="nav-text">3.9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-10"><span class="nav-number">1.9.</span> <span class="nav-text">3.10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1"><span class="nav-number">1.10.</span> <span class="nav-text">4.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3"><span class="nav-number">1.11.</span> <span class="nav-text">4.3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4"><span class="nav-number">1.12.</span> <span class="nav-text">4.4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5"><span class="nav-number">1.13.</span> <span class="nav-text">4.5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6"><span class="nav-number">1.14.</span> <span class="nav-text">4.6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7"><span class="nav-number">1.15.</span> <span class="nav-text">4.7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8"><span class="nav-number">1.16.</span> <span class="nav-text">4.8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-9"><span class="nav-number">1.17.</span> <span class="nav-text">4.9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-10"><span class="nav-number">1.18.</span> <span class="nav-text">4.10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1"><span class="nav-number">1.19.</span> <span class="nav-text">5.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2"><span class="nav-number">1.20.</span> <span class="nav-text">5.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3"><span class="nav-number">1.21.</span> <span class="nav-text">5.3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4"><span class="nav-number">1.22.</span> <span class="nav-text">5.4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1"><span class="nav-number">1.23.</span> <span class="nav-text">6.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2"><span class="nav-number">1.24.</span> <span class="nav-text">6.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3"><span class="nav-number">1.25.</span> <span class="nav-text">6.3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4"><span class="nav-number">1.26.</span> <span class="nav-text">6.4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1"><span class="nav-number">1.27.</span> <span class="nav-text">7.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2"><span class="nav-number">1.28.</span> <span class="nav-text">7.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#open打开文件出现的编码问题"><span class="nav-number">1.29.</span> <span class="nav-text">open打开文件出现的编码问题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#变量、分支、循环、条件、函数等常规内容"><span class="nav-number">1.</span> <span class="nav-text">变量、分支、循环、条件、函数等常规内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1"><span class="nav-number">1.1.</span> <span class="nav-text">3.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2"><span class="nav-number">1.2.</span> <span class="nav-text">3.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3"><span class="nav-number">1.3.</span> <span class="nav-text">3.3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4"><span class="nav-number">1.4.</span> <span class="nav-text">3.4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6"><span class="nav-number">1.5.</span> <span class="nav-text">3.6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7"><span class="nav-number">1.6.</span> <span class="nav-text">3.7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8"><span class="nav-number">1.7.</span> <span class="nav-text">3.8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-9"><span class="nav-number">1.8.</span> <span class="nav-text">3.9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-10"><span class="nav-number">1.9.</span> <span class="nav-text">3.10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1"><span class="nav-number">1.10.</span> <span class="nav-text">4.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3"><span class="nav-number">1.11.</span> <span class="nav-text">4.3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4"><span class="nav-number">1.12.</span> <span class="nav-text">4.4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5"><span class="nav-number">1.13.</span> <span class="nav-text">4.5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6"><span class="nav-number">1.14.</span> <span class="nav-text">4.6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7"><span class="nav-number">1.15.</span> <span class="nav-text">4.7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8"><span class="nav-number">1.16.</span> <span class="nav-text">4.8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-9"><span class="nav-number">1.17.</span> <span class="nav-text">4.9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-10"><span class="nav-number">1.18.</span> <span class="nav-text">4.10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1"><span class="nav-number">1.19.</span> <span class="nav-text">5.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2"><span class="nav-number">1.20.</span> <span class="nav-text">5.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3"><span class="nav-number">1.21.</span> <span class="nav-text">5.3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4"><span class="nav-number">1.22.</span> <span class="nav-text">5.4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1"><span class="nav-number">1.23.</span> <span class="nav-text">6.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2"><span class="nav-number">1.24.</span> <span class="nav-text">6.2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3"><span class="nav-number">1.25.</span> <span class="nav-text">6.3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4"><span class="nav-number">1.26.</span> <span class="nav-text">6.4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1"><span class="nav-number">1.27.</span> <span class="nav-text">7.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2"><span class="nav-number">1.28.</span> <span class="nav-text">7.2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件系统"><span class="nav-number">2.</span> <span class="nav-text">文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1"><span class="nav-number">2.1.</span> <span class="nav-text">8.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2"><span class="nav-number">2.2.</span> <span class="nav-text">8.2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常处理"><span class="nav-number">3.</span> <span class="nav-text">异常处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-2"><span class="nav-number">3.1.</span> <span class="nav-text">9.2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类和对象"><span class="nav-number">4.</span> <span class="nav-text">类和对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#11"><span class="nav-number">4.1.</span> <span class="nav-text">11</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块"><span class="nav-number">5.</span> <span class="nav-text">模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#13"><span class="nav-number">5.1.</span> <span class="nav-text">13</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块命名方式"><span class="nav-number">5.1.1.</span> <span class="nav-text">模块命名方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#name-属性"><span class="nav-number">5.1.2.</span> <span class="nav-text">__name__属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索路径"><span class="nav-number">5.1.3.</span> <span class="nav-text">搜索路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包"><span class="nav-number">5.1.4.</span> <span class="nav-text">包</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#爬虫"><span class="nav-number">6.</span> <span class="nav-text">爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#14"><span class="nav-number">6.1.</span> <span class="nav-text">14</span></a></li></ol></li></ol></div>
             
 
           </div>

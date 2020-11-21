@@ -83,11 +83,11 @@
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux_centos6网络配置">
-<meta property="og:url" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;frosty.github.io&#x2F;2020&#x2F;03&#x2F;20&#x2F;Linux-centos6%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;frosty-wind.github.io&#x2F;2020&#x2F;03&#x2F;20&#x2F;Linux-centos6%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE&#x2F;index.html">
 <meta property="og:site_name" content="frosty的博客">
 <meta property="og:description" content="今天对vm中的centos6进行了网络配置在此记录一下 setup配置 vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-th0 : 把ONBOOT=”no”改为ONBOOT=”yes” serviece network restart: 重启网络服务  配置ip找了很多博客文章,终于找到一个能配成功能够ping通baidu的博客) (若无法访问请科学上网) 记录下需">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-20T10:53:28.323Z">
+<meta property="og:updated_time" content="2020-07-17T03:04:40.897Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://frosty-wind.github.io/frosty.github.io/2020/03/20/Linux-centos6网络配置/"/>
+  <link rel="canonical" href="https://frosty-wind.github.io/2020/03/20/Linux-centos6网络配置/"/>
 
 
 
@@ -261,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty.github.io/frosty.github.io/2020/03/20/Linux-centos6%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="https://frosty-wind.github.io/frosty.github.io/2020/03/20/Linux-centos6%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="frosty">
@@ -362,7 +362,7 @@
 </li>
 <li><p>查看本网关,网关需要在虚拟机-编辑-虚拟网络编辑器-VMnet8-NAT查看网关</p>
 </li>
-<li><p>在本机查看DNS服务器(文章中未写,但可能需要配置下DNSip),可通过cmd输入ipconfig也可以直接查看网卡</p>
+<li><p>在本机查看DNS服务器(文章中未写,但可能需要配置下DNSip),可通过cmd输入ipconfig/all也可以直接查看网卡</p>
 </li>
 <li><p>进入setup配置(如何选项前文已提)</p>
 </li>
@@ -377,6 +377,9 @@
 <li>本机ip地址设置的时候:我设置的192.168.—.1和.2 , .1被占用后设置.2无法使用网络,文章中似乎暗示着本机ip地址设置相同网段后的值应大于网关?</li>
 <li>BOOTPROTO未设置为static,事后我又改动下不设置为static其实也能ping通baidu(所以我怀疑是我开始的时候网关与ip地址配置错误所以无法连接外网)</li>
 </ol>
+<p><strong>修改DNS</strong></p>
+<p>vi /etc/resolv.conf</p>
+<p>nameserver 8.8.8.8</p>
 
       
     </div>
@@ -416,6 +419,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/frosty.github.io/2020/03/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="正则表达式">
+                正则表达式 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -483,7 +490,7 @@
               
                 <a href="/frosty.github.io/archives">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -494,7 +501,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/frosty.github.io/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -505,7 +512,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/frosty.github.io/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
